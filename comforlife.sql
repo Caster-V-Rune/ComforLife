@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50537
 File Encoding         : 65001
 
-Date: 2016-03-04 14:36:31
+Date: 2016-03-06 16:37:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,9 +21,9 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `title` text NOT NULL,
-  `author` text,
-  `desc` text,
+  `title` varchar(100) NOT NULL,
+  `author` varchar(100) DEFAULT NULL,
+  `desc` varchar(100) DEFAULT NULL,
   `time` datetime NOT NULL,
   `click` int(11) NOT NULL DEFAULT '0',
   `top` int(11) NOT NULL DEFAULT '0',
@@ -58,16 +58,16 @@ CREATE TABLE `renthome` (
   `userID` int(11) NOT NULL,
   `homeType` int(11) NOT NULL,
   `rentType` int(11) NOT NULL,
-  `conName` text NOT NULL,
-  `homeArea` text NOT NULL,
-  `busiArea` text NOT NULL,
+  `conName` varchar(100) NOT NULL,
+  `homeArea` varchar(100) NOT NULL,
+  `busiArea` varchar(100) NOT NULL,
   `room` int(11) NOT NULL,
   `hall` int(11) NOT NULL,
   `toilet` int(11) NOT NULL,
   `area` int(11) NOT NULL,
   `fitment` int(11) NOT NULL,
   `direction` int(11) NOT NULL,
-  `cert` longtext NOT NULL,
+  `cert` blob NOT NULL,
   `floor` int(11) NOT NULL,
   `floorNum` int(11) NOT NULL,
   `buildNum` int(11) NOT NULL,
@@ -76,11 +76,12 @@ CREATE TABLE `renthome` (
   `rentNum` int(11) NOT NULL,
   `depositType` int(11) NOT NULL,
   `support` int(11) NOT NULL,
-  `title` text NOT NULL,
-  `desc` text,
+  `title` varchar(100) NOT NULL,
+  `desc` varchar(100) DEFAULT NULL,
   `checkInTime` date DEFAULT NULL,
   `check` int(11) NOT NULL DEFAULT '0',
   `attention` int(11) NOT NULL DEFAULT '0',
+  `latlng` varchar(100) NOT NULL,
   PRIMARY KEY (`homeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -95,7 +96,7 @@ DROP TABLE IF EXISTS `rentpic`;
 CREATE TABLE `rentpic` (
   `picID` int(11) NOT NULL AUTO_INCREMENT,
   `homeID` int(11) NOT NULL,
-  `pic` longtext NOT NULL,
+  `pic` blob NOT NULL,
   PRIMARY KEY (`picID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -132,14 +133,15 @@ CREATE TABLE `salehome` (
   `hall` int(11) NOT NULL,
   `toilet` int(11) NOT NULL,
   `area` int(11) NOT NULL,
-  `conName` text NOT NULL,
+  `conName` varchar(100) NOT NULL,
   `unitPrice` int(11) NOT NULL,
   `floor` int(11) NOT NULL,
   `totalFloor` int(11) NOT NULL,
   `direction` int(11) NOT NULL,
-  `desc` text,
+  `desc` varchar(100) DEFAULT NULL,
   `check` int(11) NOT NULL DEFAULT '0',
   `attention` int(11) NOT NULL DEFAULT '0',
+  `latlng` varchar(100) NOT NULL,
   PRIMARY KEY (`homeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -154,7 +156,7 @@ DROP TABLE IF EXISTS `salepic`;
 CREATE TABLE `salepic` (
   `picID` int(11) NOT NULL AUTO_INCREMENT,
   `homeID` int(11) NOT NULL,
-  `pic` longtext NOT NULL,
+  `pic` blob NOT NULL,
   PRIMARY KEY (`picID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -168,10 +170,10 @@ CREATE TABLE `salepic` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `username` text NOT NULL,
-  `password` text NOT NULL,
-  `name` text NOT NULL,
-  `phone` text NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
