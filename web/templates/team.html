@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>團隊展示</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/team.css">
 
 </head>
 <body>
@@ -33,7 +34,51 @@
 
 </div>
     <div class="zhanwei"></div>
+    <p class="team-title">我的團隊</p>
+    <div class="team-container">
+        <div class="team-member-cell">
+            <img class="member-pic" src="assets/images/cly.jpg"></img>
+            <div class="member-name">崔樂陽</div>
+            <div class="member-job">項目經理</div>
+        </div>
+        <div class="team-member-cell">
+            <img class="member-pic" src="assets/images/cly.jpg"></img>
+            <div class="member-name">崔樂陽</div>
+            <div class="member-job">項目經理</div>
+        </div>
+        <div class="team-member-cell">
+            <img class="member-pic" src="assets/images/cly.jpg"></img>
+            <div class="member-name">崔樂陽</div>
+            <div class="member-job">項目經理</div>
+        </div>
+        <div class="team-member-cell">
+            <img class="member-pic" src="assets/images/cly.jpg"></img>
+            <div class="member-name">崔樂陽</div>
+            <div class="member-job">項目經理</div>
+        </div>
+        <div class="team-member-cell">
+            <img class="member-pic" src="assets/images/cly.jpg"></img>
+            <div class="member-name">崔樂陽</div>
+            <div class="member-job">項目經理</div>
+        </div>
+        <div class="team-member-cell">
+            <img class="member-pic" src="assets/images/cly.jpg"></img>
+            <div class="member-name">崔樂陽</div>
+            <div class="member-job">項目經理</div>
+        </div>
+    </div>
     <script src="assets/js/jquery-2.1.4.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/masonry.pkgd.min.js"></script>
+
+    <script>
+        $(function(){
+            $('.team-container').masonry({
+                // options
+                itemSelector: '.team-member-cell',
+                columnWidth: $('.team-container').width()/3,
+            });
+        });
+    </script>
 </body>
 </html>
