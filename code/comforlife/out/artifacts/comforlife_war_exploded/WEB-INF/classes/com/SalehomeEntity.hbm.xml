@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.SalehomeEntity" table="salehome" schema="" catalog="comforlife">
+        <id name="homeId">
+            <column name="homeID" sql-type="int" not-null="true"/>
+        </id>
+        <property name="userId">
+            <column name="userID" sql-type="int" not-null="true"/>
+        </property>
+        <property name="buildNum">
+            <column name="buildNum" sql-type="int" not-null="true"/>
+        </property>
+        <property name="unitNum">
+            <column name="unitNum" sql-type="int" not-null="true"/>
+        </property>
+        <property name="roomNum">
+            <column name="roomNum" sql-type="int" not-null="true"/>
+        </property>
+        <property name="room">
+            <column name="room" sql-type="int" not-null="true"/>
+        </property>
+        <property name="hall">
+            <column name="hall" sql-type="int" not-null="true"/>
+        </property>
+        <property name="toilet">
+            <column name="toilet" sql-type="int" not-null="true"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="int" not-null="true"/>
+        </property>
+        <property name="conName">
+            <column name="conName" sql-type="varchar" length="100" not-null="true"/>
+        </property>
+        <property name="unitPrice">
+            <column name="unitPrice" sql-type="int" not-null="true"/>
+        </property>
+        <property name="floor">
+            <column name="floor" sql-type="int" not-null="true"/>
+        </property>
+        <property name="totalFloor">
+            <column name="totalFloor" sql-type="int" not-null="true"/>
+        </property>
+        <property name="direction">
+            <column name="direction" sql-type="int" not-null="true"/>
+        </property>
+        <property name="desc">
+            <column name="desc" sql-type="varchar" length="100"/>
+        </property>
+        <property name="check">
+            <column name="check" sql-type="int" not-null="true"/>
+        </property>
+        <property name="attention">
+            <column name="attention" sql-type="int" not-null="true"/>
+        </property>
+        <property name="latlng">
+            <column name="latlng" sql-type="varchar" length="100" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
