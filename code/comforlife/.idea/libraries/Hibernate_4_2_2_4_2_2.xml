@@ -11,9 +11,11 @@
       <root url="jar://$PROJECT_DIR$/lib/javassist-3.15.0-GA.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hibernate-core-4.2.2.Final.jar!/" />
       <root url="file://$PROJECT_DIR$/lib" />
+      <root url="file://F:/Tomcat 6.0/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    <jarDirectory url="file://F:/Tomcat 6.0/lib" recursive="false" />
   </library>
 </component>

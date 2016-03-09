@@ -1,0 +1,436 @@
+.opacity(@value: 0) {
+  @ie6_value: (@value * 100);
+
+  -khtml-opacity: @value;
+  -moz-opacity: @value;
+  opacity: @value;
+
+  filter: ~'alpha(opacity=@{ie6_value})';
+}
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.bg(@start,@end){
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(@start), to(@end));
+  background: -moz-linear-gradient(top, @start, @end);
+  filter: progid:DXImageTranform.Microsoft.gradient(startColorstr=@start, endColorstr=@end, gradientType=0);
+}
+
+
+.header{
+  .header-list{
+
+  }
+  .login{
+    position: absolute;
+    z-index: 1;
+    padding-left: 90%;
+    padding-top: 10px;
+    font-size: 13px;
+    a{
+      color: white;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+html,body{
+  margin:0;
+  padding:0;
+  min-width: 1024px;
+  //font-family: ;
+  position: relative;
+}
+.first-page{
+  background-image: url(~"../images/0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+  display:-webkit-flex;
+  .house-search{
+    height: 40%;
+    width: 60%;
+    background-color: #0f0f0f;
+    .opacity(0.8);
+    .border-radius(15px);
+    .box-shadow(0, 0, 60px, 0.8);
+    text-align: inherit;
+    .logo{
+      height: 45%;
+      background-color: #2b542c;
+    }
+    .search-type{
+      height: 25%;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      align-items: center;
+      display: -webkit-flex;
+      .types{
+        text-align: center;
+        a{
+          margin: 5px;
+          font-size: 15px;
+          color: #ffffff;
+          padding: 10px;
+          &:hover{
+            background-color: firebrick;
+            .border-radius(5px);
+            text-decoration: none;
+          }
+          &.cur{
+            background-color: firebrick;
+            .border-radius(5px);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .innerline{
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      .sanjiao{
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid white;
+        margin-left: 30px;//30 110 195
+        margin-bottom: -1px;
+      }
+    }
+    
+    .search-input{
+      height: 17%;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      .form-control{
+        border: 0 solid #ccc;
+      }
+
+    }
+    .gaojisousuo a{
+      margin-left: 80%;
+    }
+  }
+
+}
+.arrow-down{
+  z-index: 1;
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  .button-next-cont{
+    .button-next{
+      display: inline-block;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      background-color: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      .glyphicon-chevron-down{
+        margin-top: 18px;
+      }
+    }
+  }
+}
+.details{
+  padding-top: 40px;
+  background-color: #fcfcfc;
+
+  .detail{
+    height: 480px;
+    position: relative;
+    left: 10%;
+    width: 80%;
+    .detail-header{
+      width: 100%;
+      font-size: 25px;
+    };
+    .detail-line{
+      height: 3px;
+      .line1{
+        float: left;
+        width: 29%;
+        height: 3px;
+        margin: 0 8px 0 auto;
+        padding: 0;
+        background-color: red;
+        overflow: hidden;
+      };
+      .line2{
+        float: left;
+        width: 70%;
+        height: 3px;
+        margin:  0 auto;
+        padding: 0;
+        background-color: red;
+        overflow: hidden;
+      };
+    };
+    .detail-container{
+      position: relative;
+      width: 100%;
+      .house-list{
+        float: left;
+        overflow: hidden;
+        width: 30%;
+        margin: 10px auto;
+        padding: 0;
+        position: relative;
+        height: 400px;
+        .xuxian{
+          float: left;
+          width: 5%;
+          height: 100%;
+          border-right: dotted;
+          border-right-width: 2px;
+          border-right-color: #c8c8c8;
+        };
+        .list{
+          float: left;
+          width: 85%;
+          height: 100%;
+          .flist{
+            width: 94%;
+            height: 40%;
+            .tag{
+              height: 15px;
+              .dian{
+                width: 6px;
+                height: 6px;
+                background-color: #fcfcfc;
+                border: 2px #c8c8c8 solid;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                position: relative;
+                float: left;
+                left: -4px;
+                top: 7px;
+                overflow: visible;
+              };
+              .house-list-title{
+                margin-left: 4px;
+                padding-left: 5px;
+                font-size: 15px;
+                width: 70px;
+                background-color: red;
+                .border-radius(2px);
+                color: white;
+              };
+              .house-list-title-bg{
+                position: relative;
+                float: left;
+                width: 0;
+                height: 0;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid red;
+                top: -15px;
+                left: 74px;
+              };
+            };
+            .one-house{
+              height: 30px;
+              padding: 5px;
+              margin: 5px;
+              position: relative;
+              .house-name{
+                color: black;
+                width: 70%;
+                text-align: left;
+                float: left;
+              };
+              .house-price{
+
+                color: #505050;
+                width: 30%;
+                text-align: left;
+                float: left;
+              };
+            };
+          };
+          .tlist{
+            position: relative;
+            height: 60%;
+            .scroll-list{
+              position: relative;
+              overflow: auto;
+              height: 100%;
+              .tag{
+                .dian{
+                  width: 6px;
+                  height: 6px;
+                  background-color: #fcfcfc;
+                  border: 2px #c8c8c8 solid;
+                  -webkit-border-radius: 3px;
+                  -moz-border-radius: 3px;
+                  position: relative;
+                  z-index: 2;
+                  top: 7px;
+                  float: left;
+                  left: -4px;
+                  overflow: visible;
+                };
+                .house-list-title{
+                  margin-left: 4px;
+                  padding-left: 5px;
+                  font-size: 15px;
+                  width: 70px;
+                  background-color: red;
+                  .border-radius(2px);
+                  color: white;
+                };
+                .house-list-title-bg{
+                  position: relative;
+                  float: left;
+                  width: 0;
+                  height: 0;
+                  border-top: 5px solid transparent;
+                  border-bottom: 5px solid transparent;
+                  border-left: 5px solid red;
+                  top: -15px;
+                  left: 74px;
+                };
+              };
+              .one-house{
+                height: 30px;
+
+                padding: 5px;
+                margin: 5px;
+                position: relative;
+                .house-name{
+                  color: black;
+                  width: 70%;
+                  text-align: left;
+                  float: left;
+                };
+                .house-price{
+
+                  color: #505050;
+                  width: 30%;
+                  text-align: left;
+                  float: left;
+                };
+              };
+            };
+          };
+        }
+      };
+      .house-pictures{
+        float: left;
+        overflow: hidden;
+        width: 50%;
+        margin: 10px auto;
+        padding: 0;
+        position: relative;
+        height: 400px;
+        .fpic{
+          margin: 1%;
+          float: left;
+          padding: 0;
+          width: 62%;
+          height: 48%;
+          img{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+          };
+          .fpic-des{
+            margin: 0;
+            .bg(rgba(0, 0, 0, 0.2),black);
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            bottom: 0;
+            top: -40px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+          };
+        }
+        .pic{
+          margin: 1%;
+          float: left;
+          padding: 0;
+          width: 30%;
+          height: 48%;
+          img{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+          };
+          .pic-des{
+            margin: 0;
+            .bg(rgba(0, 0, 0, 0.2),black);
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            top: -40px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+          };
+        }
+      };
+      .house-news{
+        float: left;
+        overflow: hidden;
+        width: 20%;
+        margin: 10px auto;
+        padding: 0;
+        height: 400px;
+        .news-header{
+          margin: 10px auto;
+          height: 5%;
+          .news-header-name{
+            font-size: 15px;
+            float: left;
+            width: 90%;
+            margin: 0;
+          };
+          .news-header-icon{
+            float: left;
+            margin: 0;
+          };
+        };
+        .news-block{
+          .fnews{
+            text-align: center;
+            color: red;
+            font-size: large;
+          };
+          .news{
+            text-align: left;
+            color: black;
+            margin: 5px auto;
+          };
+        };
+      };
+    };
+  }
+}
