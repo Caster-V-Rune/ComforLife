@@ -1,0 +1,32 @@
+.opacity(@value: 0) {
+  @ie6_value: (@value * 100);
+
+  -khtml-opacity: @value;
+  -moz-opacity: @value;
+  opacity: @value;
+
+  filter: ~'alpha(opacity=@{ie6_value})';
+}
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.bg(@start,@end){
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(@start), to(@end));
+  background: -moz-linear-gradient(top, @start, @end);
+  filter: progid:DXImageTranform.Microsoft.gradient(startColorstr=@start, endColorstr=@end, gradientType=0);
+}
+.header{
+  width: 100%;
+  height: 50px;
+  background-color: #0d3966;
+
+};
+.zhanwei{
+  width: 100%;
+  height: 70px;
+  position: relative;
+  left: 0;
+  top: 0;
+};

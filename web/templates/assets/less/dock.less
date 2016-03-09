@@ -1,0 +1,125 @@
+
+// this file is sepreated from index.less
+//	for CSS modular
+
+@import "prefixer.less";
+
+#docker {
+
+	position: fixed;
+	top: 50%;
+	.transform(translate3d(0, -50%, 0));
+	right: 0;
+	text-align: center;
+	.transition(all 0.3s ease-in-out);
+	
+	// hide dock stuff when screen is too narrow
+	@media only screen and (max-height: 640px) {
+		// maybe TODO: just hide it.
+		.transform(translate3d(100%, -50%, 0)); }
+
+	#dock {
+		// width: 24px;
+		// height: 240px;
+		background-color: fade(black, 40%);
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		border-radius: 10px 0 0 10px;
+		padding: 4px;
+		padding-right: 0;
+		.transition(all 0.2s ease-in-out);
+		
+		-webkit-user-select: none;
+		user-select: none;
+		
+		li {
+			padding: 8px;
+			.dock-icon {
+				color: fade(white, 50%);
+				font-size: 32px;
+				.transition(color 0.2s ease-in-out);
+				cursor: default;
+				// cursor: pointer;
+				
+				&:hover {
+					color: fade(white, 20%); }
+			}
+			// requirement: customizable icon, with images
+			//	well, does not really need it
+			.dock-icon-img {
+				width: 48px;
+				height: 48px;
+				.transition(opacity 0.2s ease-in-out);
+				&:hover { opacity: 0.8; }
+			}
+			
+			.dock-popup {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				z-index: -1;
+				color: white;
+				// right: 64px; /* TODO */
+				.dock-popup-inner {
+					width: 176px;
+					height: 176px;
+					padding: 16px;
+					background-color: fade(black, 40%);
+					border-radius: 10px 0 0 10px;
+					// NOTE: this is FIXED and HARDCODED!
+					margin-right: 61px;
+					
+					// for phone
+					//	(we have 3 phone-like fields, in key-value
+					.key {
+						text-align: left;
+						font-weight: bold;
+						margin-top: 0.5em;
+					}
+				}
+				.transform(translate3d(100%, -50%, 0));
+				.transition(all 0.3s ease-in-out);
+				
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			
+			&:hover .dock-popup {
+				.transform(translate3d(0, -50%, 0));
+			}
+		}
+	}
+	
+	#switch {
+		position: absolute;
+		bottom: 0;
+		.transform(translate3d(0, 100%, 0));
+		div {
+			font-size: 30px;
+			padding: 17px;
+			cursor: default;
+			
+			color: fade(black, 40%);
+			.transition(all 0.2s ease-in-out);
+			.transform(rotate(45deg));
+			width: 64px;
+			&:hover {
+				color: fade(black, 20%);	
+			}
+		}
+	}
+
+	&.closed {
+		#dock { .transform(translate3d(100%, 0, 0)); }
+		#switch {
+			div {
+				// .transform(rotate(135deg));
+				.transform(rotate(180deg));
+			}
+		}
+	}
+
+}
