@@ -13,8 +13,10 @@
       <root url="jar://$PROJECT_DIR$/lib/ognl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-io.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javassist.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
   </library>
 </component>

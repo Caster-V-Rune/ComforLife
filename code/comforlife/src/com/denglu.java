@@ -15,24 +15,25 @@ public class denglu extends ActionSupport {
 
     public String execute()
     {
-        List users = hibernateOperation.denglu(username);
-        if (users == null )
-        {
-            return "no";
-        }
-        else
-        {
-            UserEntity user = (UserEntity)users.get(0);
-            if (user.getPassword().equals(password))
-            {
-                return "yes";
-            }
-            else
-            {
+        try {
+            List users = hibernateOperation.denglu(username);
+            if (users == null) {
                 return "no";
-            }
+            } else {
+                UserEntity user = (UserEntity) users.get(0);
+                if (user.getPassword().equals(password)) {
+                    return "yes";
+                } else {
+                    return "no";
+                }
 
+            }
         }
+        catch (Exception e)
+        {
+            System.out.print(e);
+        }
+        return "no";
     }
 
     public String getUsername() {

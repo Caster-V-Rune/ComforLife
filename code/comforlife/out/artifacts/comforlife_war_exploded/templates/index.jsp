@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password">√‹¬Î</label>
-                            <input  name = "" type="password" class="form-control" id="password" placeholder="√‹¬Î">
+                            <input  name = "password" type="password" class="form-control" id="password" placeholder="√‹¬Î">
                         </div>
                     </form>
                 </div>
