@@ -145,20 +145,28 @@ body {
   border: #e0e0e0 solid 1px;
   background-color: white;
 }
-.search-container .house-container .a-house {
+.search-container .house-container .house-group {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+}
+.search-container .house-container .house-group .a-house {
   width: 100%;
   height: 100%;
   overflow: hidden;
   padding: 10px;
   border-bottom: 1px dashed #e3e3e3;
 }
-.search-container .house-container .a-house img {
+.search-container .house-container .house-group .a-house img {
   position: relative;
   float: left;
   height: 240px;
   width: 275px;
 }
-.search-container .house-container .a-house .house-details {
+.search-container .house-container .house-group .a-house .house-details {
   position: relative;
   float: left;
   width: 40%;
@@ -167,24 +175,24 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.search-container .house-container .a-house .house-details .house-name {
+.search-container .house-container .house-group .a-house .house-details .house-name {
   font-weight: 700;
   font-size: 22px;
   margin-bottom: 20px;
 }
-.search-container .house-container .a-house .house-details .house-types {
+.search-container .house-container .house-group .a-house .house-details .house-types {
   font-weight: bolder;
   font-size: 16px;
   margin-bottom: 20px;
 }
-.search-container .house-container .a-house .house-details .house-types span {
+.search-container .house-container .house-group .a-house .house-details .house-types span {
   color: #e3e3e3;
   padding: 0 6px;
 }
-.search-container .house-container .a-house .house-details .house-position {
+.search-container .house-container .house-group .a-house .house-details .house-position {
   color: #060606;
 }
-.search-container .house-container .a-house .house-price {
+.search-container .house-container .house-group .a-house .house-price {
   position: relative;
   float: left;
   padding: 90px 30px;
@@ -192,12 +200,12 @@ body {
   height: 100%;
   overflow: hidden;
 }
-.search-container .house-container .a-house .house-price span {
+.search-container .house-container .house-group .a-house .house-price span {
   color: #f32e2e;
   font-size: 28px;
   font-weight: 700;
   margin-right: 6px;
 }
-.search-container .house-container nav ul {
-  margin: auto;
+.search-container .house-container nav {
+  text-align: center;
 }

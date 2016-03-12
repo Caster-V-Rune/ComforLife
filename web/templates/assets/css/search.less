@@ -157,62 +157,70 @@ body{
     .border-radius(2px);
     border: #e0e0e0 solid 1px;
     background-color: white;
-    .a-house{
+    .house-group {
+      padding: 0;
+      margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      padding: 10px;
-      border-bottom: 1px dashed #e3e3e3;
-      img{
-        position: relative;
-        float: left;
-        height: 240px;
-        width: 275px;
-      }
-      .house-details{
-        position: relative;
-        float: left;
-        width: 40%;
-        height: 100%;
-        margin-left: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        .house-name{
-          font-weight: 700;
-          font-size: 22px;
-          margin-bottom: 20px;
-        }
-        .house-types{
-          font-weight: bolder;
-          font-size: 16px;
-          margin-bottom: 20px;
-          span{
-            color: #e3e3e3;
-            padding: 0 6px;
-          }
-        }
-        .house-position{
-          color: #060606;
-        }
-      }
-      .house-price{
-        position: relative;
-        float: left;
-        padding: 90px 30px;
-        width: 30%;
+      display: none;
+      .a-house {
+        width: 100%;
         height: 100%;
         overflow: hidden;
-        span{
-          color: #f32e2e;
-          font-size: 28px;
-          font-weight: 700;
-          margin-right: 6px;
+        padding: 10px;
+        border-bottom: 1px dashed #e3e3e3;
+        img {
+          position: relative;
+          float: left;
+          height: 240px;
+          width: 275px;
         }
+        .house-details {
+          position: relative;
+          float: left;
+          width: 40%;
+          height: 100%;
+          margin-left: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          .house-name {
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 20px;
+          }
+          .house-types {
+            font-weight: bolder;
+            font-size: 16px;
+            margin-bottom: 20px;
+            span {
+              color: #e3e3e3;
+              padding: 0 6px;
+            }
+          }
+          .house-position {
+            color: #060606;
+          }
+        }
+        .house-price {
+          position: relative;
+          float: left;
+          padding: 90px 30px;
+          width: 30%;
+          height: 100%;
+          overflow: hidden;
+          span {
+            color: #f32e2e;
+            font-size: 28px;
+            font-weight: 700;
+            margin-right: 6px;
+          }
 
+        }
       }
     }
-    nav ul{
-      margin: auto;
+    nav{
+      text-align: center;
     }
   }
 }
