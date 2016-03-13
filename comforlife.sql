@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50537
 File Encoding         : 65001
 
-Date: 2016-03-13 14:48:07
+Date: 2016-03-13 11:34:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -148,30 +148,25 @@ CREATE TABLE `salehome` (
   `hall` int(11) DEFAULT NULL,
   `toilet` int(11) DEFAULT NULL,
   `area` int(11) DEFAULT NULL,
-  `homeArea` varchar(100) DEFAULT NULL,
-  `busiArea` varchar(100) DEFAULT NULL,
   `conName` varchar(100) DEFAULT NULL,
-  `fitment` int(11) DEFAULT NULL,
   `unitPrice` int(11) DEFAULT NULL,
   `floor` int(11) DEFAULT NULL,
   `totalFloor` int(11) DEFAULT NULL,
   `direction` int(11) DEFAULT NULL,
-  `support` int(11) DEFAULT NULL,
-  `title` varchar(100) DEFAULT NULL,
   `desc` varchar(100) DEFAULT NULL,
   `check` int(11) DEFAULT '0',
   `attention` int(11) DEFAULT '0',
   `latlng` varchar(100) DEFAULT NULL,
-  `FS` int(2) DEFAULT NULL,
+  `F/S` int(2) DEFAULT NULL,
   PRIMARY KEY (`homeID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of salehome
 -- ----------------------------
-INSERT INTO `salehome` VALUES ('104', '4', '5', '3', '6', '2', '1', '1', '70', '双流', '川大路', '江安花园', '1', '7000', '4', '8', '5', '1', '石佳影推荐', '买房即可获得石佳影亲笔签名', '0', '0', '30.67,104.06', '0');
-INSERT INTO `salehome` VALUES ('105', '5', '2', '2', '7', '2', '1', '1', '110', '双流', '川大路', '江安花园', '4', '8000', '7', '8', '3', '2', '石博士代言', '买房即可获得石佳影亲笔签名', '0', '0', '30.67,104.06', '1');
-INSERT INTO `salehome` VALUES ('106', '6', '3', '1', '5', '3', '2', '2', '200', '双流', '川大路', '江安花园', '5', '10000', '5', '10', '1', '1', '尽请期待', '买房即可获得石佳影签名照', '0', '4', '30.67,104.06', '1');
+INSERT INTO `salehome` VALUES ('104', '4', '5', '3', '6', '2', '1', '1', '70', '江安花园', '7000', '4', '8', '5', '买房即可获得石佳影亲笔签名', '0', '0', '30.67,104.06', '0');
+INSERT INTO `salehome` VALUES ('105', '5', '2', '2', '7', '2', '1', '1', '110', '江安花园', '8000', '7', '8', '3', '买房即可获得石佳影亲笔签名', '0', '0', '30.67,104.06', '1');
+INSERT INTO `salehome` VALUES ('106', '6', '3', '1', '5', '3', '2', '2', '200', '江安花园', '10000', '5', '10', '1', '买房即可获得石佳影签名照', '0', '4', '30.67,104.06', '1');
 
 -- ----------------------------
 -- Table structure for `salepic`
