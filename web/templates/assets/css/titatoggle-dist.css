@@ -900,14 +900,14 @@ Slider C
   border-radius: 20px;
 }
 .checkbox-slider--c input:checked + span:after {
-  background: #5cb85c;
+  background: #0038FF;
   margin-left: 20px;
-  border: solid #5cb85c 2px;
+  border: solid #0038FF 2px;
   -webkit-animation: splashIn ease-in 0.3s normal;
           animation: splashIn ease-in 0.3s normal;
 }
 .checkbox-slider--c input:checked + span:before {
-  background: #5cb85c;
+  background: #0038FF;
 }
 /*******************************************************
 Slider C Sizes
@@ -1015,14 +1015,14 @@ Slider C-weight
   border-radius: 20px;
 }
 .checkbox-slider--c-weight input:checked + span:after {
-  background: #5cb85c;
+  background: #0038FF;
   margin-left: 20px;
-  border: solid #5cb85c 2px;
+  border: solid #0038FF 2px;
   -webkit-animation: splashIn ease-in 0.3s normal;
           animation: splashIn ease-in 0.3s normal;
 }
 .checkbox-slider--c-weight input:checked + span:before {
-  background: #5cb85c;
+  background: #0038FF;
 }
 .checkbox-slider--c-weight.checkbox-slider-sm input + span:before {
   top: 4px;
