@@ -4,13 +4,18 @@ import javax.persistence.*;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/9.
+ * Created by Administrator on 2016/3/13.
  */
 @Entity
 @Table(name = "salepic", schema = "", catalog = "comforlife")
 public class SalepicEntity {
     private int picId;
     private int homeId;
+
+    public void setHomeId(Integer homeId) {
+        this.homeId = homeId;
+    }
+
     private byte[] pic;
 
     @Id
@@ -24,7 +29,7 @@ public class SalepicEntity {
     }
 
     @Basic
-    @Column(name = "homeID", nullable = false, insertable = true, updatable = true)
+    @Column(name = "homeID", nullable = true, insertable = true, updatable = true)
     public int getHomeId() {
         return homeId;
     }
@@ -34,7 +39,7 @@ public class SalepicEntity {
     }
 
     @Basic
-    @Column(name = "pic", nullable = false, insertable = true, updatable = true)
+    @Column(name = "pic", nullable = true, insertable = true, updatable = true)
     public byte[] getPic() {
         return pic;
     }

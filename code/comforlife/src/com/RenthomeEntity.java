@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/9.
+ * Created by Administrator on 2016/3/13.
  */
 @Entity
 @Table(name = "renthome", schema = "", catalog = "comforlife")
@@ -38,6 +38,50 @@ public class RenthomeEntity {
     private int check;
     private int attention;
     private String latlng;
+
+    public void setDirection(Integer direction) {
+        this.direction = direction;
+    }
+
+    public void setFloor(Integer floor) {
+        this.floor = floor;
+    }
+
+    public void setFloorNum(Integer floorNum) {
+        this.floorNum = floorNum;
+    }
+
+    public void setBuildNum(Integer buildNum) {
+        this.buildNum = buildNum;
+    }
+
+    public void setUnitNum(Integer unitNum) {
+        this.unitNum = unitNum;
+    }
+
+    public void setRoomNum(Integer roomNum) {
+        this.roomNum = roomNum;
+    }
+
+    public void setRentNum(Integer rentNum) {
+        this.rentNum = rentNum;
+    }
+
+    public void setDepositType(Integer depositType) {
+        this.depositType = depositType;
+    }
+
+    public void setSupport(Integer support) {
+        this.support = support;
+    }
+
+    public void setCheck(Integer check) {
+        this.check = check;
+    }
+
+    public void setAttention(Integer attention) {
+        this.attention = attention;
+    }
 
     @Id
     @Column(name = "homeID", nullable = false, insertable = true, updatable = true)
@@ -160,7 +204,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "direction", nullable = false, insertable = true, updatable = true)
+    @Column(name = "direction", nullable = true, insertable = true, updatable = true)
     public int getDirection() {
         return direction;
     }
@@ -170,7 +214,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "cert", nullable = false, insertable = true, updatable = true)
+    @Column(name = "cert", nullable = true, insertable = true, updatable = true)
     public byte[] getCert() {
         return cert;
     }
@@ -180,7 +224,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "floor", nullable = false, insertable = true, updatable = true)
+    @Column(name = "floor", nullable = true, insertable = true, updatable = true)
     public int getFloor() {
         return floor;
     }
@@ -190,7 +234,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "floorNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "floorNum", nullable = true, insertable = true, updatable = true)
     public int getFloorNum() {
         return floorNum;
     }
@@ -200,7 +244,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "buildNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "buildNum", nullable = true, insertable = true, updatable = true)
     public int getBuildNum() {
         return buildNum;
     }
@@ -210,7 +254,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "unitNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "unitNum", nullable = true, insertable = true, updatable = true)
     public int getUnitNum() {
         return unitNum;
     }
@@ -220,7 +264,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "roomNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "roomNum", nullable = true, insertable = true, updatable = true)
     public int getRoomNum() {
         return roomNum;
     }
@@ -230,7 +274,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "rentNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "rentNum", nullable = true, insertable = true, updatable = true)
     public int getRentNum() {
         return rentNum;
     }
@@ -240,7 +284,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "depositType", nullable = false, insertable = true, updatable = true)
+    @Column(name = "depositType", nullable = true, insertable = true, updatable = true)
     public int getDepositType() {
         return depositType;
     }
@@ -250,7 +294,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "support", nullable = false, insertable = true, updatable = true)
+    @Column(name = "support", nullable = true, insertable = true, updatable = true)
     public int getSupport() {
         return support;
     }
@@ -260,7 +304,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "title", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "title", nullable = true, insertable = true, updatable = true, length = 100)
     public String getTitle() {
         return title;
     }
@@ -270,7 +314,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "desc", nullable = true, insertable = true, updatable = true, length = 100)
+    @Column(name = "desc", nullable = true, insertable = true, updatable = true, length = 65535)
     public String getDesc() {
         return desc;
     }
@@ -290,7 +334,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "check", nullable = false, insertable = true, updatable = true)
+    @Column(name = "check", nullable = true, insertable = true, updatable = true)
     public int getCheck() {
         return check;
     }
@@ -300,7 +344,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "attention", nullable = false, insertable = true, updatable = true)
+    @Column(name = "attention", nullable = true, insertable = true, updatable = true)
     public int getAttention() {
         return attention;
     }
@@ -310,7 +354,7 @@ public class RenthomeEntity {
     }
 
     @Basic
-    @Column(name = "latlng", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "latlng", nullable = true, insertable = true, updatable = true, length = 100)
     public String getLatlng() {
         return latlng;
     }

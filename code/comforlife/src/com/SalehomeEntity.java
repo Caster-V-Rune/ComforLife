@@ -3,28 +3,98 @@ package com;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2016/3/9.
+ * Created by Administrator on 2016/3/13.
  */
 @Entity
 @Table(name = "salehome", schema = "", catalog = "comforlife")
 public class SalehomeEntity {
     private int homeId;
     private int userId;
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     private int buildNum;
+
+    public void setBuildNum(Integer buildNum) {
+        this.buildNum = buildNum;
+    }
+
     private int unitNum;
+
+    public void setUnitNum(Integer unitNum) {
+        this.unitNum = unitNum;
+    }
+
     private int roomNum;
+
+    public void setRoomNum(Integer roomNum) {
+        this.roomNum = roomNum;
+    }
+
     private int room;
+
+    public void setRoom(Integer room) {
+        this.room = room;
+    }
+
     private int hall;
+
+    public void setHall(Integer hall) {
+        this.hall = hall;
+    }
+
     private int toilet;
+
+    public void setToilet(Integer toilet) {
+        this.toilet = toilet;
+    }
+
     private int area;
+
+    public void setArea(Integer area) {
+        this.area = area;
+    }
+
     private String conName;
     private int unitPrice;
+
+    public void setUnitPrice(Integer unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
     private int floor;
+
+    public void setFloor(Integer floor) {
+        this.floor = floor;
+    }
+
     private int totalFloor;
+
+    public void setTotalFloor(Integer totalFloor) {
+        this.totalFloor = totalFloor;
+    }
+
     private int direction;
+
+    public void setDirection(Integer direction) {
+        this.direction = direction;
+    }
+
     private String desc;
     private int check;
+
+    public void setCheck(Integer check) {
+        this.check = check;
+    }
+
     private int attention;
+
+    public void setAttention(Integer attention) {
+        this.attention = attention;
+    }
+
     private String latlng;
 
     @Id
@@ -38,7 +108,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "userID", nullable = false, insertable = true, updatable = true)
+    @Column(name = "userID", nullable = true, insertable = true, updatable = true)
     public int getUserId() {
         return userId;
     }
@@ -48,7 +118,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "buildNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "buildNum", nullable = true, insertable = true, updatable = true)
     public int getBuildNum() {
         return buildNum;
     }
@@ -58,7 +128,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "unitNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "unitNum", nullable = true, insertable = true, updatable = true)
     public int getUnitNum() {
         return unitNum;
     }
@@ -68,7 +138,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "roomNum", nullable = false, insertable = true, updatable = true)
+    @Column(name = "roomNum", nullable = true, insertable = true, updatable = true)
     public int getRoomNum() {
         return roomNum;
     }
@@ -78,7 +148,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "room", nullable = false, insertable = true, updatable = true)
+    @Column(name = "room", nullable = true, insertable = true, updatable = true)
     public int getRoom() {
         return room;
     }
@@ -88,7 +158,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "hall", nullable = false, insertable = true, updatable = true)
+    @Column(name = "hall", nullable = true, insertable = true, updatable = true)
     public int getHall() {
         return hall;
     }
@@ -98,7 +168,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "toilet", nullable = false, insertable = true, updatable = true)
+    @Column(name = "toilet", nullable = true, insertable = true, updatable = true)
     public int getToilet() {
         return toilet;
     }
@@ -108,7 +178,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "area", nullable = false, insertable = true, updatable = true)
+    @Column(name = "area", nullable = true, insertable = true, updatable = true)
     public int getArea() {
         return area;
     }
@@ -118,7 +188,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "conName", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "conName", nullable = true, insertable = true, updatable = true, length = 100)
     public String getConName() {
         return conName;
     }
@@ -128,7 +198,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "unitPrice", nullable = false, insertable = true, updatable = true)
+    @Column(name = "unitPrice", nullable = true, insertable = true, updatable = true)
     public int getUnitPrice() {
         return unitPrice;
     }
@@ -138,7 +208,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "floor", nullable = false, insertable = true, updatable = true)
+    @Column(name = "floor", nullable = true, insertable = true, updatable = true)
     public int getFloor() {
         return floor;
     }
@@ -148,7 +218,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "totalFloor", nullable = false, insertable = true, updatable = true)
+    @Column(name = "totalFloor", nullable = true, insertable = true, updatable = true)
     public int getTotalFloor() {
         return totalFloor;
     }
@@ -158,7 +228,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "direction", nullable = false, insertable = true, updatable = true)
+    @Column(name = "direction", nullable = true, insertable = true, updatable = true)
     public int getDirection() {
         return direction;
     }
@@ -178,7 +248,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "check", nullable = false, insertable = true, updatable = true)
+    @Column(name = "check", nullable = true, insertable = true, updatable = true)
     public int getCheck() {
         return check;
     }
@@ -188,7 +258,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "attention", nullable = false, insertable = true, updatable = true)
+    @Column(name = "attention", nullable = true, insertable = true, updatable = true)
     public int getAttention() {
         return attention;
     }
@@ -198,7 +268,7 @@ public class SalehomeEntity {
     }
 
     @Basic
-    @Column(name = "latlng", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "latlng", nullable = true, insertable = true, updatable = true, length = 100)
     public String getLatlng() {
         return latlng;
     }
@@ -257,5 +327,78 @@ public class SalehomeEntity {
         result = 31 * result + attention;
         result = 31 * result + (latlng != null ? latlng.hashCode() : 0);
         return result;
+    }
+
+    private String homeArea;
+
+    @Basic
+    @Column(name = "homeArea", nullable = true, insertable = true, updatable = true, length = 100)
+    public String getHomeArea() {
+        return homeArea;
+    }
+
+    public void setHomeArea(String homeArea) {
+        this.homeArea = homeArea;
+    }
+
+    private String busiArea;
+
+    @Basic
+    @Column(name = "busiArea", nullable = true, insertable = true, updatable = true, length = 100)
+    public String getBusiArea() {
+        return busiArea;
+    }
+
+    public void setBusiArea(String busiArea) {
+        this.busiArea = busiArea;
+    }
+
+    private Integer fitment;
+
+    @Basic
+    @Column(name = "fitment", nullable = true, insertable = true, updatable = true)
+    public Integer getFitment() {
+        return fitment;
+    }
+
+    public void setFitment(Integer fitment) {
+        this.fitment = fitment;
+    }
+
+    private Integer support;
+
+    @Basic
+    @Column(name = "support", nullable = true, insertable = true, updatable = true)
+    public Integer getSupport() {
+        return support;
+    }
+
+    public void setSupport(Integer support) {
+        this.support = support;
+    }
+
+    private String title;
+
+    @Basic
+    @Column(name = "title", nullable = true, insertable = true, updatable = true, length = 100)
+    public String getTitle() {
+        return title;
+    }
+
+
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    private Integer fs;
+
+    @Basic
+    @Column(name = "FS", nullable = true, insertable = true, updatable = true)
+    public Integer getFs() {
+        return fs;
+    }
+
+    public void setFs(Integer fs) {
+        this.fs = fs;
     }
 }

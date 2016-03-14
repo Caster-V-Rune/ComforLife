@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2016/3/9.
+ * Created by Administrator on 2016/3/13.
  */
 @Entity
 @Table(name = "news", schema = "", catalog = "comforlife")
@@ -48,7 +48,7 @@ public class NewsEntity {
     }
 
     @Basic
-    @Column(name = "desc", nullable = true, insertable = true, updatable = true, length = 100)
+    @Column(name = "desc", nullable = true, insertable = true, updatable = true, length = 65535)
     public String getDesc() {
         return desc;
     }

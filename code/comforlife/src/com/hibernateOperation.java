@@ -31,12 +31,40 @@ public class hibernateOperation {
     public static Session getSession() throws HibernateException {
         return ourSessionFactory.openSession();
     }
-    public void insertUser(UserEntity userEntity)
+    public static void insertUser(UserEntity userEntity)
     {
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(userEntity);
-        transaction.commit();
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            session.save(userEntity);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void updateUser(int ID,String password,String name,String phone)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            UserEntity user = (UserEntity)session.get(UserEntity.class,ID);
+            user.setPassword(password);
+            user.setName(name);
+            user.setPhone(phone);
+            session.save(user);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
     }
 
     public static List denglu(String userName)
@@ -46,6 +74,7 @@ public class hibernateOperation {
         String hql = "from UserEntity as User where username = "+userName;
         Query query = session.createQuery(hql);
         List list = query.list();
+        session.close();
         if (list.isEmpty())
         {
             return null;
@@ -55,13 +84,66 @@ public class hibernateOperation {
             return list;
         }
     }
-    public  List listInfor()
+    public static List searchRent(String keyword,int rentPay,int room,int rentType)
     {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "select i from InforEntity as i";
-        Query query = session.createQuery(sql);
+        String hql = "from RenthomeEntity as home where 1=1 ";
+        if (rentPay != 0)
+        {
+            hql= hql+"and home.rentNum > "+500*(rentPay-1)+"and home.rentNum < "+500*rentPay;
+        }
+        if (room != 0)
+        {
+            hql = hql + "and home.room = "+room;
+        }
+        if (rentType != 0)
+        {
+            hql = hql + "and home.rentType = "+rentType;
+        }
+        if (keyword != "")
+        {
+            hql = hql + "and home.title like '%"+keyword+"%'";
+        }
+        Query query = session.createQuery(hql);
         List list = query.list();
         return list;
     }
+    public static List searchSale(String keyword,int salePay,int room,int firSec)
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "from SalehomeEntity as home where home.check=1";
+        if (salePay != 0)
+        {
+            hql= hql+"and home.unitPrice > "+500*(salePay-1)+"and home.unitPrice < "+500*salePay;
+        }
+        if (room != 0)
+        {
+            hql = hql + "and home.room = "+room;
+        }
+        if (keyword != "")
+        {
+            hql = hql + "and home.title like '%"+keyword+"%'";
+
+        }
+        if (firSec ==1)
+        {
+            hql = hql + "and home.fs = "+firSec;
+        }
+        Query query = session.createQuery(hql);
+        List list = query.list();
+        return list;
+    }
+    public static List recommandList()
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "from SalehomeEntity as home order by home.attention where home.check=1 ";
+        Query query = session.createQuery(hql);
+        query.setMaxResults(5);
+        List list = query.list();
+        return list;
+    }
+
 }
