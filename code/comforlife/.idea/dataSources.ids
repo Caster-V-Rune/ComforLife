@@ -91,6 +91,7 @@
       <column name="attention" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
       <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="FS" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="checkInTime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
       <primary-key name="PRIMARY" columns="homeID"/>
     </table>
     <table name="salepic" schema="" catalog="comforlife" type="TABLE">

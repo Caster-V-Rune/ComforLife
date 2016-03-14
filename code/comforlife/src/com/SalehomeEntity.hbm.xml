@@ -77,5 +77,8 @@
         <property name="fs">
             <column name="FS" sql-type="int"/>
         </property>
+        <property name="checkInTime">
+            <column name="checkInTime" sql-type="date"/>
+        </property>
     </class>
 </hibernate-mapping>

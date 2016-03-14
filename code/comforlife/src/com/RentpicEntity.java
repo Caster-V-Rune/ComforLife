@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/13.
+ * Created by Administrator on 2016/3/14.
  */
 @Entity
 @Table(name = "rentpic", schema = "", catalog = "comforlife")

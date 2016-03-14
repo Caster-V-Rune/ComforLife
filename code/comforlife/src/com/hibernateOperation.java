@@ -135,14 +135,37 @@ public class hibernateOperation {
         List list = query.list();
         return list;
     }
-    public static List recommandList()
+    public static List recommandList(String table)
     {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-        String hql = "from SalehomeEntity as home order by home.attention where home.check=1 ";
+        String hql = "from "+table+" as home  where home.check=1 order by home.attention desc";
         Query query = session.createQuery(hql);
-        query.setMaxResults(5);
+        query.setMaxResults(3);
         List list = query.list();
+        return list;
+    }
+    public static List sortAccordingTime(int num,String table)
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "from "+table+" as home  where home.check=1 order by home.checkInTime desc";
+        Query query = session.createQuery(hql);
+        query.setMaxResults(num);
+        List list = query.list();
+        return list;
+    }
+    public static List newsAccordingTime(int num)
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "from NewsEntity as news  where news.top=1 order by news.time desc ";
+        Query query = session.createQuery(hql);
+        query.setMaxResults(num);
+        List list = query.list();
+        hql = "from NewsEntity as news  where news.top <> 1 order by news.time desc ";
+        query = session.createQuery(hql);
+        list.addAll(query.list());
         return list;
     }
 

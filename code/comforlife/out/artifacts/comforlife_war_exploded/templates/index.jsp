@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/struts-tags.tld" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <base href=" <%=basePath%>">
@@ -163,105 +164,34 @@
                     <div class="list">
                         <div class="flist">
                             <div class="tag">
-                            <div class="dian"></div>
-                            <div class="house-list-title">熱盤推薦</div>
-                            <div class="house-list-title-bg"></div>
+                                <div class="dian"></div>
+                                <div class="house-list-title">熱盤推薦</div>
+                                <div class="house-list-title-bg"></div>
                             </div>
 
-                            <s:iterator value="recommandList" id="recomList">
+                            <c:forEach var="home" items="${salerecommandList}" varStatus="status">
 
-                            <div class="one-house">
-                                <div class="house-name"><s:property value="recomList.title" /> </div>
-                                <div class="house-price"><s:property value="recomList.unitPrice" /></div>
-                            </div>
+                                <div class="one-house">
+                                    <div class="house-name"><a href="/struts/saleHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                    <div class="house-price">${home.unitPrice}元/平方米</div>
+                                </div>
+                            </c:forEach>
 
                         </div>
                         <div class="tlist">
                             <div data-spy="scroll" data-target="" data-offset="0" class="scroll-list">
                                 <div class="tag">
                                     <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
+                                    <div class="house-list-title">最新推出</div>
                                     <div class="house-list-title-bg"></div>
                                 </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="tag">
-                                    <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
-                                    <div class="house-list-title-bg"></div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="tag">
-                                    <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
-                                    <div class="house-list-title-bg"></div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="tag">
-                                    <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
-                                    <div class="house-list-title-bg"></div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
+                                <c:forEach var="home" items="${saleaccordTimeList}" varStatus="status">
+                                    <div class="one-house">
+                                        <div class="house-name"><a href="/struts/saleHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                        <div class="house-price">${home.unitPrice}元/平方米</div>
+                                    </div>
+                                </c:forEach>
+
                             </div>
                         </div>
 
@@ -299,27 +229,19 @@
                         </div>
                     </div>
                     <div class="news-block">
-                        <div class="fnews">這是一條新聞</div>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                    </div>
-                    <div class="news-block">
-                        <div class="fnews">這是一條新聞</div>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
-                        <li class="news">這是一條新聞這是一條新聞這是一條新聞</li>
+                        <div class="fnews">热点新闻</div>
+
+                        <c:forEach var="news" items="${newsList}" varStatus="status">
+                            <li class="news"><a href="/struts/news.action?id=${news.id}">${news.title}</a></li>
+                        </c:forEach>
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="detail">
             <div class="detail-header">
-                新房
+                租房
             </div>
             <div class="detail-line">
                 <div class="line1"></div>
@@ -335,109 +257,30 @@
                                 <div class="house-list-title">熱盤推薦</div>
                                 <div class="house-list-title-bg"></div>
                             </div>
-                            <div class="one-house">
-                                <div class="house-name">香山長島</div>
-                                <div class="house-price">待定</div>
-                            </div>
-                            <div class="one-house">
-                                <div class="house-name">香山長島</div>
-                                <div class="house-price">待定</div>
-                            </div>
-                            <div class="one-house">
-                                <div class="house-name">香山長島</div>
-                                <div class="house-price">待定</div>
-                            </div>
-                            <div class="one-house">
-                                <div class="house-name">香山長島</div>
-                                <div class="house-price">待定</div>
-                            </div>
+
+                            <c:forEach var="home" items="${rentrecommandList}" varStatus="status">
+
+                                <div class="one-house">
+                                    <div class="house-name"><a href="/struts/rentHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                    <div class="house-price">${home.rentNum}元/月</div>
+                                </div>
+                            </c:forEach>
+
                         </div>
                         <div class="tlist">
                             <div data-spy="scroll" data-target="" data-offset="0" class="scroll-list">
                                 <div class="tag">
                                     <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
+                                    <div class="house-list-title">最新推出</div>
                                     <div class="house-list-title-bg"></div>
                                 </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="tag">
-                                    <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
-                                    <div class="house-list-title-bg"></div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="tag">
-                                    <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
-                                    <div class="house-list-title-bg"></div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="tag">
-                                    <div class="dian"></div>
-                                    <div class="house-list-title">二月一日</div>
-                                    <div class="house-list-title-bg"></div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
-                                <div class="one-house">
-                                    <div class="house-name">香山長島</div>
-                                    <div class="house-price">待定</div>
-                                </div>
+                                <c:forEach var="home" items="${rentaccordTimeList}" varStatus="status">
+                                    <div class="one-house">
+                                        <div class="house-name"><a href="/struts/rentHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                        <div class="house-price">${home.rentNum}元/月</div>
+                                    </div>
+                                </c:forEach>
+
                             </div>
                         </div>
 
@@ -493,6 +336,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <script>

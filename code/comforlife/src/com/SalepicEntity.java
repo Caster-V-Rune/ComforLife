@@ -4,18 +4,13 @@ import javax.persistence.*;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/13.
+ * Created by Administrator on 2016/3/14.
  */
 @Entity
 @Table(name = "salepic", schema = "", catalog = "comforlife")
 public class SalepicEntity {
     private int picId;
-    private int homeId;
-
-    public void setHomeId(Integer homeId) {
-        this.homeId = homeId;
-    }
-
+    private Integer homeId;
     private byte[] pic;
 
     @Id
@@ -30,11 +25,11 @@ public class SalepicEntity {
 
     @Basic
     @Column(name = "homeID", nullable = true, insertable = true, updatable = true)
-    public int getHomeId() {
+    public Integer getHomeId() {
         return homeId;
     }
 
-    public void setHomeId(int homeId) {
+    public void setHomeId(Integer homeId) {
         this.homeId = homeId;
     }
 
@@ -55,8 +50,8 @@ public class SalepicEntity {
 
         SalepicEntity that = (SalepicEntity) o;
 
-        if (homeId != that.homeId) return false;
         if (picId != that.picId) return false;
+        if (homeId != null ? !homeId.equals(that.homeId) : that.homeId != null) return false;
         if (!Arrays.equals(pic, that.pic)) return false;
 
         return true;
@@ -65,7 +60,7 @@ public class SalepicEntity {
     @Override
     public int hashCode() {
         int result = picId;
-        result = 31 * result + homeId;
+        result = 31 * result + (homeId != null ? homeId.hashCode() : 0);
         result = 31 * result + (pic != null ? Arrays.hashCode(pic) : 0);
         return result;
     }

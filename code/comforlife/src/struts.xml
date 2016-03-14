@@ -5,12 +5,13 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+
     <package name="struts" extends="struts-default">
         <action name="index" class="com.index">
             <result name="yes">/templates/index.jsp</result>
         </action>
         <action name="denglu" class="com.denglu">
-            <result name="yes" type= "chain">index.action</result>
+            <result name="yes" type= "chain">index</result>
         </action>
         <action name="yanzheng" class="com.yanzheng">
             <result name="no">/templates/index.jsp</result>
