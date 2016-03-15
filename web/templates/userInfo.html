@@ -163,72 +163,34 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-8" align="center">
-                                    <form role="form">
 
-                                        <br>
-                                        <div class="form-inline">
-                                            <label>旧密码：</label>
-                                            <input class="form-control" placeholder="Password" align="center" type="password">
-                                        </div>
-                                        <br>
-                                        <div class="form-inline">
-                                            <label>新密码：</label>
-                                            <input class="form-control" placeholder="New password" align="center" type="password">
-                                        </div>
-                                        <br>
-
-                                        <div class="form-inline">
-                                            <label>确认密码：</label>
-                                            <input class="form-control" placeholder="Confirm new password" align="center" type="password">
-                                        </div>
-                                        <br>
-
-
-                                        <button type="submit" class="btn btn-sm btn-primary passwd-btn">确认</button>
-
-                                        <span><a href="#" style="font-size: smaller" data-toggle="modal" data-target="#myModal">忘记密码?</a> </span>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel"><strong>密码找回</strong></h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>请输入您的登录邮箱，我们将会将验证消息发送至您的邮箱!</p>
-
-                                                        <div class="form-inline">
-                                                            <label>邮箱账号：</label>
-                                                            <input class="form-control" placeholder="Email address" align="center">
-                                                            <button type="submit" class="btn btn-sm btn-primary">确认</button>
-                                                        </div>
-                                                        <br>
-
-
-                                                        <p>请输入您的验证消息!</p>
-                                                        <div class="form-inline">
-                                                            <label>验证消息：</label>
-                                                            <input class="form-control" placeholder="Message" align="center">
-                                                            <button type="submit" class="btn btn-sm btn-primary">确认</button>
-                                                        </div>
-                                                        <br>
-                                                        <p>确认完验证消息后提示原密码</p>
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </form>
-                                </div>
                                 <!-- /.col-lg-6 (nested) -->
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="newpass" class="col-sm-2 control-label">新密码：</label>
+                                        <div class="col-sm-4">
+                                            <input type="password" class="form-control" id="newpass" placeholder="New password (6-18)">
+
+                                        </div>
+                                        <div class="col-md-2" style="display: inline" id="tip1"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newpassCon" class="col-sm-2 control-label">确认密码：</label>
+                                        <div class="col-sm-4">
+                                            <input type="password" class="form-control" id="newpassCon" placeholder="Confirm new password">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-6">
+                                            <button type="submit" class="btn btn-sm btn-primary passwd-btn">确认</button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+
 
                             </div>
                             <!-- /.row (nested) -->
@@ -243,29 +205,33 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-8" align="center">
-                                <form role="form">
 
-                                    <br>
-                                    <div class="form-inline">
-                                        <label>姓名：</label>
-                                        <input class="form-control" placeholder="Name" align="center">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="infoname" class="col-sm-2 control-label">姓名：</label>
+                                    <div class="col-sm-4">
+                                        <input type="password" class="form-control" id="infoname" placeholder="Name">
+
                                     </div>
-                                    <br>
-                                    <div class="form-inline">
-                                        <label>联系方式：</label>
-                                        <input class="form-control" placeholder="Phone" align="center">
+                                    <div class="col-md-2" style="display: inline" id="tip2"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="infophone" class="col-sm-2 control-label">联系方式：</label>
+                                    <div class="col-sm-4">
+                                        <input type="password" class="form-control" id="infophone" placeholder="Phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-6">
+                                        <p  class="help-block" style="font-size: small">请如实填写用户信息，以方便合作联系！</p>
+                                        <button type="submit" class="btn btn-sm btn-primary info-btn" id="info-btn" >确认</button>
                                     </div>
 
-                                    <p  class="help-block" style="font-size: small">请如实填写用户信息，以方便合作联系！</p>
-                                    <button type="submit" class="btn btn-sm btn-primary">确认</button>
+                                </div>
 
+                            </form>
 
-
-
-                                </form>
-                            </div>
-                            <!-- /.col-lg-6 (nested) -->
 
                         </div>
                         <!-- /.row (nested) -->
@@ -279,13 +245,23 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-8" align="center">
 
-                                    <p  class="help-block" style="font-size: small">您一旦注销账户，将无法找回！请慎重考虑</p>
-                                    <button type="submit" class="btn btn-sm btn-primary btn-danger">注销账户</button>
 
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+                                <form class="form-horizontal">
+
+                                    <div class="form-group">
+
+                                        <div class="col-sm-offset-2 col-sm-6">
+                                            <p  class="help-block" style="font-size: small">您一旦注销账户，将无法找回！请慎重考虑</p>
+
+                                            <button type="submit" class="btn btn-sm btn-primary btn-danger" id="cancel-btn" >注销账户</button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+
 
                             </div>
                             <!-- /.row (nested) -->
@@ -340,10 +316,113 @@
 <script src="assets/js/sb-admin-2.js"></script>
 <script>
     $(function(){
-        $('.passwd-btn').on('click', function(){
-            alert('cly');
+        $('#newpass').blur(function() {
+            var num = $('#newpass').val().length;
+            if (num < 6) {
+                $("#tip1").html("<font color=\"red\" size=\"2\">  too short</font>");
+            }
+            else if (num > 18) {
+                $("#tip1").html("<font color=\"red\" size=\"2\">  too long</font>");
+            }
+            else {
+                $("#tip1").html("<font color=\"green\" size=\"2\"> Accept</font>");
+            }
         });
-    })
+
+        $(".passwd-btn").click(function(){
+            var flag=true;
+
+            var pass=$('#newpass').val();
+            var pass2=$('#newpassCon').val();
+            var num1=$('#newpass').val().length;
+            var num2=$('#newpassCon').val().length;
+            if(num1!=num2||num1<6||num2<6||num1>18||num2>18||pass!=pass2){
+                flag=false;
+            }
+            else{
+                flag=true;
+            }
+            if(flag){
+                alert('密码修改正确！');
+                $.ajax({
+                    'url':'',
+                    'data':{},
+                    'method':'POST'
+
+                });
+            }
+            else{
+
+                alert('确认密码不正确，请重新输入！');
+            }
+        });
+
+
+
+    });
+    $(function(){
+        $('#infoname').blur(function() {
+            var num = $('#infoname').val().length;
+            if (num == 0) {
+                $("#tip2").html("<font color=\"red\" size=\"2\">  不能为空</font>");
+            }
+
+            else {
+                $("#tip2").html("<font color=\"green\" size=\"2\"> Accept</font>");
+            }
+        });
+
+        $('#infophone').blur(function() {
+            var num = $('#infohome').val().length;
+            if (num == 0) {
+                $("#tip3").html("<font color=\"red\" size=\"2\">  不能为空</font>");
+            }
+
+            else {
+                $("#tip3").html("<font color=\"green\" size=\"2\"> Accept</font>");
+            }
+        });
+
+        $("#info-btn").click(function(){
+            var flag=true;
+
+            var num1=$('#infoname').val().length;
+            var num2=$('#infophone').val().length;
+            if(num1 == 0 || num2 == 0){
+                flag=false;
+            }
+            else{
+                flag=true;
+            }
+            if(flag){
+                alert('信息更改成功');
+                $.ajax({
+                    'url':'',
+                    'data':{},
+                    'method':'POST'
+
+                });
+            }
+            else{
+
+                alert('信息格式不正确，请重新输入！');
+            }
+        });
+
+    });
+    $(function(){
+        $("#cancel-btn").click(function(){
+            alert('账户已注销！');
+            $.ajax({
+                'url':'',
+                'data':{},
+                'method':'POST'
+
+            });
+        });
+    });
+
+
 </script>
 </body>
 </html>
