@@ -389,18 +389,9 @@
                     'zhaozufang': 1,
                     'maiershoufang': 2
                 }
-                $.post({
-                    url: '/struts/search.action',
-                    data: {
-                        kw: kw,
-                        type: type_dic[type],
-                        rentPay:0,
-                        salePay:0,
-                        room:0,
-                        rentType:0
+                window.location = '/struts/search.action?kw='+kw+'&type='+type_dic[type]+
+                '&rentPay=0&salePay=0&room=0&rentType=0';
 
-                    }
-                });
             });
 
         });

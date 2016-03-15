@@ -107,6 +107,7 @@ public class hibernateOperation {
         }
         Query query = session.createQuery(hql);
         List list = query.list();
+        session.close();
         return list;
     }
     public static List searchSale(String keyword,int salePay,int room,int firSec)
@@ -133,6 +134,7 @@ public class hibernateOperation {
         }
         Query query = session.createQuery(hql);
         List list = query.list();
+        session.close();
         return list;
     }
     public static List recommandList(String table)
@@ -143,6 +145,7 @@ public class hibernateOperation {
         Query query = session.createQuery(hql);
         query.setMaxResults(3);
         List list = query.list();
+        session.close();
         return list;
     }
     public static List sortAccordingTime(int num,String table)
@@ -153,6 +156,7 @@ public class hibernateOperation {
         Query query = session.createQuery(hql);
         query.setMaxResults(num);
         List list = query.list();
+        session.close();
         return list;
     }
     public static List newsAccordingTime(int num)
@@ -166,7 +170,24 @@ public class hibernateOperation {
         hql = "from NewsEntity as news  where news.top <> 1 order by news.time desc ";
         query = session.createQuery(hql);
         list.addAll(query.list());
+        session.close();
         return list;
+    }
+
+    public static void insertRentHouse(RenthomeEntity renthomeEntity)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            session.save(renthomeEntity);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
     }
 
 }

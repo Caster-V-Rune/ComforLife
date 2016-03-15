@@ -22,7 +22,7 @@ $(function(){
         var username = $('input#semail').val();
         $.ajax({
             type: 'POST',
-            url: '/struts/yanzheng.action',
+            url: '',
             data: {
                 username: username
             },

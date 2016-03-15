@@ -19,6 +19,10 @@ public class search extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
+
+            kw = new String(kw.getBytes("iso-8859-1"),"UTF-8");
+
+
         if (type == 1)
         {
             result = hibernateOperation.searchRent(kw,rentPay,room,rentType);
@@ -81,5 +85,13 @@ public class search extends ActionSupport {
 
     public void setRentPay(int rentPay) {
         this.rentPay = rentPay;
+    }
+
+    public List getResult() {
+        return result;
+    }
+
+    public void setResult(List result) {
+        this.result = result;
     }
 }

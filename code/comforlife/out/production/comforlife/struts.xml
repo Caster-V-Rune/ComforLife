@@ -20,7 +20,13 @@
             <result name="no">/templates/index.jsp</result>
         </action>
         <action name="search" class="com.search">
-            <result name="yes">/templates/search.jsp</result>
+            <result name="yes">/templates/rentSearch.jsp</result>
+        </action>
+        <action name="addRentHouseIndex" class="com.addHouse" method="redir">
+            <result name="yes">/templates/addhouse.jsp</result>
+        </action>
+        <action name="addRentHouse" class="com.addHouse">
+            <result name="yes">/templates/index.jsp</result>
         </action>
     </package>
 </struts>
