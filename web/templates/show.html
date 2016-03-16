@@ -85,6 +85,18 @@
                     聯繫人:blahblah
                 </p>
             </div>
+            <div align="right">
+
+
+                <button type="button" class="btn btn-default btn-lg btn1" id="focus-btn" style="width: 100px;">
+                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>关注
+                </button>
+                <button type="button" class="btn btn-default btn-lg btn2" id="focused-btn" style="width: 100px; display: none" >
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>已关注
+                </button>
+            </div>
+
+
         </div>
     </div>
 
@@ -233,6 +245,17 @@
             itemSelector: '.pic-item',
             columnWidth: $('.pics').width()/2,
         });
+    });
+    $(function(){
+        $('#focus-btn').on('click',function(){
+            var btn1 = $('#focus-btn');
+            var btn2 = $('#focused-btn');
+
+            btn1.hide();
+            btn2.show();
+
+        });
+
     });
 </script>
 
