@@ -15,7 +15,7 @@
             <column name="author" sql-type="varchar" length="100"/>
         </property>
         <property name="desc">
-            <column name="desc" sql-type="varchar" length="100"/>
+            <column name="desc" sql-type="text" length="65535"/>
         </property>
         <property name="time">
             <column name="time" sql-type="datetime" not-null="true"/>

@@ -9,10 +9,10 @@
             <column name="picID" sql-type="int" not-null="true"/>
         </id>
         <property name="homeId">
-            <column name="homeID" sql-type="int" not-null="true"/>
+            <column name="homeID" sql-type="int"/>
         </property>
         <property name="pic">
-            <column name="pic" sql-type="blob" not-null="true"/>
+            <column name="pic" sql-type="blob"/>
         </property>
     </class>
 </hibernate-mapping>

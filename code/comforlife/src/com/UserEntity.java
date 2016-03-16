@@ -3,7 +3,7 @@ package com;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2016/3/9.
+ * Created by Administrator on 2016/3/14.
  */
 @Entity
 @Table(name = "user", schema = "", catalog = "comforlife")
@@ -45,7 +45,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "name", nullable = true, insertable = true, updatable = true, length = 100)
     public String getName() {
         return name;
     }
@@ -55,7 +55,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "phone", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "phone", nullable = true, insertable = true, updatable = true, length = 100)
     public String getPhone() {
         return phone;
     }

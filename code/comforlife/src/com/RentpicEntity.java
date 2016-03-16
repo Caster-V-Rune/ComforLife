@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/9.
+ * Created by Administrator on 2016/3/14.
  */
 @Entity
 @Table(name = "rentpic", schema = "", catalog = "comforlife")
@@ -34,7 +34,7 @@ public class RentpicEntity {
     }
 
     @Basic
-    @Column(name = "pic", nullable = false, insertable = true, updatable = true)
+    @Column(name = "pic", nullable = true, insertable = true, updatable = true)
     public byte[] getPic() {
         return pic;
     }

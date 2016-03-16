@@ -15,10 +15,10 @@
             <column name="password" sql-type="varchar" length="100" not-null="true"/>
         </property>
         <property name="name">
-            <column name="name" sql-type="varchar" length="100" not-null="true"/>
+            <column name="name" sql-type="varchar" length="100"/>
         </property>
         <property name="phone">
-            <column name="phone" sql-type="varchar" length="100" not-null="true"/>
+            <column name="phone" sql-type="varchar" length="100"/>
         </property>
     </class>
 </hibernate-mapping>

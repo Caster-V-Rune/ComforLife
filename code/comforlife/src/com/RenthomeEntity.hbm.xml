@@ -42,52 +42,52 @@
             <column name="fitment" sql-type="int" not-null="true"/>
         </property>
         <property name="direction">
-            <column name="direction" sql-type="int" not-null="true"/>
+            <column name="direction" sql-type="int"/>
         </property>
         <property name="cert">
-            <column name="cert" sql-type="blob" not-null="true"/>
+            <column name="cert" sql-type="blob"/>
         </property>
         <property name="floor">
-            <column name="floor" sql-type="int" not-null="true"/>
+            <column name="floor" sql-type="int"/>
         </property>
         <property name="floorNum">
-            <column name="floorNum" sql-type="int" not-null="true"/>
+            <column name="floorNum" sql-type="int"/>
         </property>
         <property name="buildNum">
-            <column name="buildNum" sql-type="int" not-null="true"/>
+            <column name="buildNum" sql-type="int"/>
         </property>
         <property name="unitNum">
-            <column name="unitNum" sql-type="int" not-null="true"/>
+            <column name="unitNum" sql-type="int"/>
         </property>
         <property name="roomNum">
-            <column name="roomNum" sql-type="int" not-null="true"/>
+            <column name="roomNum" sql-type="int"/>
         </property>
         <property name="rentNum">
-            <column name="rentNum" sql-type="int" not-null="true"/>
+            <column name="rentNum" sql-type="int"/>
         </property>
         <property name="depositType">
-            <column name="depositType" sql-type="int" not-null="true"/>
+            <column name="depositType" sql-type="int"/>
         </property>
         <property name="support">
-            <column name="support" sql-type="int" not-null="true"/>
+            <column name="support" sql-type="int"/>
         </property>
         <property name="title">
-            <column name="title" sql-type="varchar" length="100" not-null="true"/>
+            <column name="title" sql-type="varchar" length="100"/>
         </property>
         <property name="desc">
-            <column name="desc" sql-type="varchar" length="100"/>
+            <column name="desc" sql-type="text" length="65535"/>
         </property>
         <property name="checkInTime">
             <column name="checkInTime" sql-type="date"/>
         </property>
         <property name="check">
-            <column name="check" sql-type="int" not-null="true"/>
+            <column name="check" sql-type="int"/>
         </property>
         <property name="attention">
-            <column name="attention" sql-type="int" not-null="true"/>
+            <column name="attention" sql-type="int"/>
         </property>
         <property name="latlng">
-            <column name="latlng" sql-type="varchar" length="100" not-null="true"/>
+            <column name="latlng" sql-type="varchar" length="100"/>
         </property>
     </class>
 </hibernate-mapping>

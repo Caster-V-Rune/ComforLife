@@ -11,7 +11,7 @@
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="author" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="desc" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="desc" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="click" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="top" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
@@ -36,28 +36,28 @@
       <column name="toilet" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="area" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="fitment" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="direction" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cert" sqlType="BLOB" precision="65535" scale="0" nullable="false" jdbcType="-4"/>
-      <column name="floor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="floorNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="buildNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="unitNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="roomNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="rentNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="depositType" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="support" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="desc" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="direction" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cert" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="floor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="floorNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="buildNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="unitNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="roomNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="rentNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="depositType" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="support" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="desc" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="checkInTime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="check" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="attention" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="check" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="attention" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="homeID"/>
     </table>
     <table name="rentpic" schema="" catalog="comforlife" type="TABLE">
       <column name="picID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="homeID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="pic" sqlType="BLOB" precision="65535" scale="0" nullable="false" jdbcType="-4"/>
+      <column name="pic" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
       <primary-key name="PRIMARY" columns="picID"/>
     </table>
     <table name="saleattention" schema="" catalog="comforlife" type="TABLE">
@@ -68,37 +68,44 @@
     </table>
     <table name="salehome" schema="" catalog="comforlife" type="TABLE">
       <column name="homeID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="userID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="buildNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="unitNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="roomNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="room" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="hall" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="toilet" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="area" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="conName" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="unitPrice" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="floor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="totalFloor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="direction" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="userID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="buildNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="unitNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="roomNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="room" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="hall" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="toilet" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="area" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="homeArea" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="busiArea" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="conName" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fitment" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="unitPrice" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="floor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="totalFloor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="direction" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="support" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="desc" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="check" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="attention" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="check" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="attention" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FS" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="checkInTime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
       <primary-key name="PRIMARY" columns="homeID"/>
     </table>
     <table name="salepic" schema="" catalog="comforlife" type="TABLE">
       <column name="picID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="homeID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="pic" sqlType="BLOB" precision="65535" scale="0" nullable="false" jdbcType="-4"/>
+      <column name="homeID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="pic" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
       <primary-key name="PRIMARY" columns="picID"/>
     </table>
     <table name="user" schema="" catalog="comforlife" type="TABLE">
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="username" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="ID"/>
     </table>
   </data-source>
