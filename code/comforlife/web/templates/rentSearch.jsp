@@ -45,7 +45,7 @@
     <div class="search-container">
         <div class="col-lg-6 search-box">
             <div class="input-group">
-                <input type="text" id="search-kw" class="form-control" placeholder="Search for...">
+                <input type="text" id="search-kw" class="form-control" placeholder="Search for..." value="${kw}">
                 <span class="input-group-btn">
                     <button class="btn btn-default search-btn" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </button>
@@ -136,25 +136,8 @@
                 </div>
                 </c:forEach>
             </div>
-            <nav>
-                <ul class="pagination">
-                    <li>
-                        <a href="#" class='previous' aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="active"><a href="#g1" class="page-number">1</a></li>
-                    <li><a href="#g2" class="page-number">2</a></li>
-                    <li><a href="#g3" class="page-number">3</a></li>
-                    <li><a href="#g4" class="page-number">4</a></li>
-                    <li><a href="#g5" class="page-number">5</a></li>
-                    <li>
-                        <a href="#" class="next" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <p class="page-selection text-center"></p>
+
         </div>
     </div>
     <div class="footer">
@@ -183,8 +166,28 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/masonry.pkgd.min.js"></script>
     <script src="assets/js/json2.js"></script>
+    <script src="assets/js/jquery.bootpag.min.js"></script>
 
     <script>
+        (function($) {
+            $.extend({
+                urlGet:function()
+                {
+                    var aQuery = window.location.href.split("?");  //取得Get参数
+                    var aGET = new Array();
+                    if(aQuery.length > 1)
+                    {
+                        var aBuf = aQuery[1].split("&");
+                        for(var i=0, iLoop = aBuf.length; i<iLoop; i++)
+                        {
+                            var aTmp = aBuf[i].split("=");  //分离key与Value
+                            aGET[aTmp[0]] = aTmp[1];
+                        }
+                    }
+                    return aGET;
+                }
+            })
+        })(jQuery);
         $(function(){
             var args = {};
             $('.tag').on('click', function () {
@@ -203,34 +206,10 @@
                 console.log(JSON.stringify(args));
 
             }) ;
-            $('#g1').css('display', 'block');
-            var cur_page = 1;
+
             $('.zu').show();
             $('.shou').hide();
-            var page_change = function (i){
-                $('.house-group').hide();
-                $(i).show();
-                cur_page = i.substring(2);
-            }
-            $('.page-number').on('click', function(){
-                $(this).parent('li').siblings('li').removeClass('active');
-                $(this).parent('li').addClass('active');
-                page_change($(this).attr('href'));
-            })
-            $('.previous').on('click', function(){
-                if (cur_page > 1) cur_page = parseInt(cur_page) - 1;
-                page_change('#g'+cur_page);
-                console.log('#g'+cur_page);
-                $(this).parent('li').siblings('li').removeClass('active');
-                $($(this).parent('li').siblings('li')[cur_page-1]).addClass('active');
-            });
-            $('.next').on('click', function(){
-                if (cur_page < 5) cur_page = parseInt(cur_page) + 1;
-                page_change('#g'+cur_page);
-                console.log('#g'+cur_page);
-                $(this).parent('li').siblings('li').removeClass('active');
-                $($(this).parent('li').siblings('li')[cur_page]).addClass('active');
-            });
+
             $('#zu').on('click', function(){
                 $('.zu').show();
                 $('.shou').hide();
@@ -254,6 +233,32 @@
                 window.location = url+s;
 
             });
+            var allpages = $('.a-house');
+            var allpages_number = allpages.length;
+            $(allpages).hide();
+            for(var i = 0; i < 10; i++){
+                $(allpages[i]).show();
+            }
+            $('.page-selection').bootpag({
+                total: Math.ceil(allpages_number/10),
+                maxVisible: 10
+            }).on("page", function(event, num){
+                $(allpages).hide();
+                for(var i = 0; i < 10; i++){
+                    $(allpages[i+(num-1)*10]).show();
+                }
+            });
+            var GET = $.urlGet();
+            $('.tags-name').each(function(i,e){
+                var value = GET[$(this).attr('v')];
+                $(e).siblings('.tag').removeClass('active');
+                $(e).siblings('.tag').each(function(i,e){
+                    if ($(e).attr('v')==value){
+                        $(e).addClass('active');
+                    }
+                })
+            });
+//            $('#search-kw').val(GET['kw']);
         });
     </script>
 </body>

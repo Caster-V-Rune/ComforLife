@@ -31,6 +31,7 @@ public class denglu extends ActionSupport {
                     Map session = actionContext.getSession();
 
                     session.put("user", email);
+                    session.put("id", user.getId());
                     return "yes";
                 } else {
                     return "no";

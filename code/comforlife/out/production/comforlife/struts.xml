@@ -28,5 +28,32 @@
         <action name="addRentHouse" class="com.addHouse">
             <result name="yes">/templates/index.jsp</result>
         </action>
+        <action name="newsList" class="com.newsList">
+            <result name="yes">/templates/news.jsp</result>
+        </action>
+        <action name="news" class="com.news">
+            <result name="yes">/templates/post.jsp</result>
+        </action>
+        <action name="addNewsIndex" class="com.NewsRelease" method="redir">
+            <result name="yes">/templates/adminAddNews.jsp</result>
+        </action>
+        <action name="addNews" class="com.NewsRelease">
+            <result name="yes">/templates/news.jsp</result>
+        </action>
+        <action name="changePassword" class="com.userInfo" method="changePassword">
+            <result name="yes">/templates/userInfo.jsp</result>
+        </action>
+        <action name="changeInfor" class="com.userInfo" method="changeInfor">
+            <result name="yes">/templates/userInfo.jsp</result>
+        </action>
+        <action name="changeInforIndex" class="com.userInfo" method="redir">
+            <result name="yes">/templates/userInfo.jsp</result>
+        </action>
+        <action name="delUser" class="com.userInfo" method="delUser">
+            <result name="yes">/templates/redir.html</result>
+        </action>
+        <action name="showNews" class="com.news">
+            <result name="yes">/templates/post.jsp</result>
+        </action>
     </package>
 </struts>

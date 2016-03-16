@@ -212,63 +212,71 @@ public class addHouse extends ActionSupport {
         return FloorNum;
     }
 
-    public void setFloorNum(String floorNum) {
-        FloorNum = floorNum;
+    public void setFloorNum(String floorNum) throws UnsupportedEncodingException
+    {
+        FloorNum = new String(floorNum.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getBuildNum() {
         return BuildNum;
     }
 
-    public void setBuildNum(String buildNum) {
-        BuildNum = buildNum;
+    public void setBuildNum(String buildNum)throws UnsupportedEncodingException
+    {
+        BuildNum =new String(buildNum.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getUnitNum() {
         return UnitNum;
     }
 
-    public void setUnitNum(String unitNum) {
-        UnitNum = unitNum;
+    public void setUnitNum(String unitNum) throws UnsupportedEncodingException
+    {
+        UnitNum = new String(unitNum.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getRoomNum() {
         return RoomNum;
     }
 
-    public void setRoomNum(String roomNum) {
-        RoomNum = roomNum;
+    public void setRoomNum(String roomNum) throws UnsupportedEncodingException
+    {
+        RoomNum = new String(roomNum.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getRentNum() {
         return RentNum;
     }
 
-    public void setRentNum(String rentNum) {
-        RentNum = rentNum;
+    public void setRentNum(String rentNum) throws UnsupportedEncodingException
+    {
+        RentNum =new String(rentNum.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getDepositType() {
         return DepositType;
     }
 
-    public void setDepositType(String depositType) {
-        DepositType = depositType;
+    public void setDepositType(String depositType) throws UnsupportedEncodingException
+    {
+        DepositType =new String(depositType.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getSupport() {
         return Support;
     }
 
-    public void setSupport(String support) {
-        Support = support;
+    public void setSupport(String support) throws UnsupportedEncodingException
+    {
+        Support =new String(support.getBytes("iso-8859-1"),"UTF-8");
     }
 
     public String getCheckInTime() {
         return CheckInTime;
     }
 
-    public void setCheckInTime(String checkInTime) {
-        CheckInTime = checkInTime;
+    public void setCheckInTime(String checkInTime)  throws UnsupportedEncodingException
+    {
+        CheckInTime = new String(checkInTime.getBytes("iso-8859-1"),"UTF-8");
     }
 }

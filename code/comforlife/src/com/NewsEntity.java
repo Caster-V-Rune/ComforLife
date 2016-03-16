@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2016/3/14.
+ * Created by Administrator on 2016/3/16.
  */
 @Entity
 @Table(name = "news", schema = "", catalog = "comforlife")
@@ -12,6 +12,7 @@ public class NewsEntity {
     private int id;
     private String title;
     private String author;
+    private String summary;
     private String desc;
     private Timestamp time;
     private int click;
@@ -45,6 +46,16 @@ public class NewsEntity {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Basic
+    @Column(name = "summary", nullable = true, insertable = true, updatable = true, length = 100)
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     @Basic
@@ -99,6 +110,7 @@ public class NewsEntity {
         if (top != that.top) return false;
         if (author != null ? !author.equals(that.author) : that.author != null) return false;
         if (desc != null ? !desc.equals(that.desc) : that.desc != null) return false;
+        if (summary != null ? !summary.equals(that.summary) : that.summary != null) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
 
@@ -110,6 +122,7 @@ public class NewsEntity {
         int result = id;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (summary != null ? summary.hashCode() : 0);
         result = 31 * result + (desc != null ? desc.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + click;

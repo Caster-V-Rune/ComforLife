@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/14.
+ * Created by Administrator on 2016/3/16.
  */
 @Entity
 @javax.persistence.Table(name = "renthome", schema = "", catalog = "comforlife")

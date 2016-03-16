@@ -14,6 +14,9 @@
         <property name="author">
             <column name="author" sql-type="varchar" length="100"/>
         </property>
+        <property name="summary">
+            <column name="summary" sql-type="varchar" length="100"/>
+        </property>
         <property name="desc">
             <column name="desc" sql-type="text" length="65535"/>
         </property>

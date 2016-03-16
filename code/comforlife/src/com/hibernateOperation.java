@@ -47,16 +47,69 @@ public class hibernateOperation {
 
     }
 
-    public static void updateUser(int ID,String password,String name,String phone)
+    public static void updateUserPassword(int ID,String password)
     {
         try {
             Session session = getSession();
             Transaction transaction = session.beginTransaction();
             UserEntity user = (UserEntity)session.get(UserEntity.class,ID);
             user.setPassword(password);
+
+            session.save(user);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
+    public static void updateUserInfor(int ID,String name,String phone)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            UserEntity user = (UserEntity)session.get(UserEntity.class,ID);
             user.setName(name);
             user.setPhone(phone);
             session.save(user);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
+    public static void updateUser(int ID,String password,String name,String phone)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            UserEntity user = (UserEntity)session.get(UserEntity.class,ID);
+            user.setName(name);
+            user.setPhone(phone);
+            user.setPassword(password);
+            session.save(user);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void delUser(int ID)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            UserEntity user = (UserEntity)session.get(UserEntity.class,ID);
+            session.delete(user);
             transaction.commit();
             session.close();
         }catch (Exception e)
@@ -74,6 +127,7 @@ public class hibernateOperation {
         String hql = "from UserEntity as User where username = "+userName;
         Query query = session.createQuery(hql);
         List list = query.list();
+        transaction.commit();
         session.close();
         if (list.isEmpty())
         {
@@ -107,6 +161,7 @@ public class hibernateOperation {
         }
         Query query = session.createQuery(hql);
         List list = query.list();
+        transaction.commit();
         session.close();
         return list;
     }
@@ -134,6 +189,7 @@ public class hibernateOperation {
         }
         Query query = session.createQuery(hql);
         List list = query.list();
+        transaction.commit();
         session.close();
         return list;
     }
@@ -145,6 +201,7 @@ public class hibernateOperation {
         Query query = session.createQuery(hql);
         query.setMaxResults(3);
         List list = query.list();
+        transaction.commit();
         session.close();
         return list;
     }
@@ -156,6 +213,7 @@ public class hibernateOperation {
         Query query = session.createQuery(hql);
         query.setMaxResults(num);
         List list = query.list();
+        transaction.commit();
         session.close();
         return list;
     }
@@ -170,6 +228,7 @@ public class hibernateOperation {
         hql = "from NewsEntity as news  where news.top <> 1 order by news.time desc ";
         query = session.createQuery(hql);
         list.addAll(query.list());
+        transaction.commit();
         session.close();
         return list;
     }
@@ -190,4 +249,32 @@ public class hibernateOperation {
 
     }
 
+    public static List newsListAll()
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "from NewsEntity as news order by news.time desc ";
+        Query query = session.createQuery(hql);
+        List list = query.list();
+        transaction.commit();
+        session.close();
+        return list;
+    }
+
+
+    public static void insertNews(NewsEntity newsEntity)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            session.save(newsEntity);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
 }
