@@ -87,13 +87,24 @@
             </div>
             <div align="right">
 
-
+                <!--未關注用這裏-->
                 <button type="button" class="btn btn-default btn-lg btn1" id="focus-btn" style="width: 100px;">
                     <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>关注
                 </button>
                 <button type="button" class="btn btn-default btn-lg btn2" id="focused-btn" style="width: 100px; display: none" >
                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>已关注
                 </button>
+                <!--/未關注用這裏-->
+
+
+                <!--已關注用這裏-->
+                <!--<button type="button" class="btn btn-default btn-lg btn1" id="focus-btn" style="width: 100px; display: none">-->
+                    <!--<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>关注-->
+                <!--</button>-->
+                <!--<button type="button" class="btn btn-default btn-lg btn2" id="focused-btn" style="width: 100px;" >-->
+                    <!--<span class="glyphicon glyphicon-star" aria-hidden="true"></span>已关注-->
+                <!--</button>-->
+                <!--/已關注用這裏-->
             </div>
 
 
@@ -251,8 +262,42 @@
             var btn1 = $('#focus-btn');
             var btn2 = $('#focused-btn');
 
-            btn1.hide();
-            btn2.show();
+            $.ajax({
+                url: '',
+                method: 'POST',
+                data: {
+                    zos: 'zu',
+                    id: 1,
+                    focus: 1,
+                    userid: 1
+                },
+                success: function(){
+                    btn1.hide();
+                    btn2.show();
+                }
+            })
+
+
+        });
+        $('#focused-btn').on('click',function(){
+            var btn1 = $('#focus-btn');
+            var btn2 = $('#focused-btn');
+
+            $.ajax({
+                url: '',
+                method: 'POST',
+                data: {
+                    zos: 'zu',
+                    id: 1,
+                    focus: 0,
+                    userid: 1
+                },
+                success: function(){
+                    btn2.hide();
+                    btn1.show();
+                }
+            })
+
 
         });
 
