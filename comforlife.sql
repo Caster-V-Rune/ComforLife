@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50537
 File Encoding         : 65001
 
-Date: 2016-03-16 14:44:31
+Date: 2016-03-17 11:18:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `news` (
   `title` varchar(100) NOT NULL,
   `author` varchar(100) DEFAULT NULL,
   `summary` varchar(100) DEFAULT NULL,
-  `desc` text,
+  `descri` text,
   `time` datetime NOT NULL,
   `click` int(11) NOT NULL DEFAULT '0',
   `top` int(11) NOT NULL DEFAULT '0',
@@ -84,7 +84,7 @@ CREATE TABLE `renthome` (
   `depositType` int(11) DEFAULT NULL,
   `support` int(11) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `desc` text,
+  `descri` text,
   `checkInTime` date DEFAULT NULL,
   `check` int(11) DEFAULT '0',
   `attention` int(11) DEFAULT '0',
@@ -161,7 +161,7 @@ CREATE TABLE `salehome` (
   `direction` int(11) DEFAULT NULL,
   `support` int(11) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `desc` varchar(100) DEFAULT NULL,
+  `descri` varchar(100) DEFAULT NULL,
   `check` int(11) DEFAULT '0',
   `attention` int(11) DEFAULT '0',
   `latlng` varchar(100) DEFAULT NULL,
