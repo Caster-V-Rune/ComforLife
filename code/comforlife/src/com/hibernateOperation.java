@@ -265,8 +265,11 @@ public class hibernateOperation {
     public static void insertNews(NewsEntity newsEntity)
     {
         try {
+            //String sql = "insert into comforlife.news (title,author,summary,)";
             Session session = getSession();
             Transaction transaction = session.beginTransaction();
+           // session.createSQLQuery(sql).executeUpdate();
+
             session.save(newsEntity);
             transaction.commit();
             session.close();
@@ -275,6 +278,16 @@ public class hibernateOperation {
             e.printStackTrace();
         }
 
+
+    }
+    public static NewsEntity getNews(String ID)
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        NewsEntity news = (NewsEntity)session.get(NewsEntity.class,new Integer(ID));
+        transaction.commit();
+        session.close();
+        return news;
 
     }
 }

@@ -74,8 +74,8 @@
         <property name="title">
             <column name="title" sql-type="varchar" length="100"/>
         </property>
-        <property name="desc">
-            <column name="desc" sql-type="text" length="65535"/>
+        <property name="descri">
+            <column name="descri" sql-type="text" length="65535"/>
         </property>
         <property name="checkInTime">
             <column name="checkInTime" sql-type="date"/>

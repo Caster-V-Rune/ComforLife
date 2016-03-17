@@ -1,42 +1,20 @@
 package com;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 
 /**
- * Created by Administrator on 2016/3/16.
+ * Created by Administrator on 2016/3/17.
  */
 @Entity
-@Table(name = "salehome", schema = "", catalog = "comforlife")
+@javax.persistence.Table(name = "salehome", schema = "", catalog = "comforlife")
 public class SalehomeEntity {
     private int homeId;
-    private Integer userId;
-    private Integer buildNum;
-    private Integer unitNum;
-    private Integer roomNum;
-    private Integer room;
-    private Integer hall;
-    private Integer toilet;
-    private Integer area;
-    private String homeArea;
-    private String busiArea;
-    private String conName;
-    private Integer fitment;
-    private Integer unitPrice;
-    private Integer floor;
-    private Integer totalFloor;
-    private Integer direction;
-    private Integer support;
-    private String title;
-    private String desc;
-    private Integer check;
-    private Integer attention;
-    private String latlng;
-    private Integer fs;
-    private Date checkInTime;
 
     @Id
-    @Column(name = "homeID", nullable = false, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "homeID", nullable = false, insertable = true, updatable = true)
     public int getHomeId() {
         return homeId;
     }
@@ -45,8 +23,10 @@ public class SalehomeEntity {
         this.homeId = homeId;
     }
 
+    private Integer userId;
+
     @Basic
-    @Column(name = "userID", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "userID", nullable = true, insertable = true, updatable = true)
     public Integer getUserId() {
         return userId;
     }
@@ -55,8 +35,10 @@ public class SalehomeEntity {
         this.userId = userId;
     }
 
+    private Integer buildNum;
+
     @Basic
-    @Column(name = "buildNum", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "buildNum", nullable = true, insertable = true, updatable = true)
     public Integer getBuildNum() {
         return buildNum;
     }
@@ -65,8 +47,10 @@ public class SalehomeEntity {
         this.buildNum = buildNum;
     }
 
+    private Integer unitNum;
+
     @Basic
-    @Column(name = "unitNum", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "unitNum", nullable = true, insertable = true, updatable = true)
     public Integer getUnitNum() {
         return unitNum;
     }
@@ -75,8 +59,10 @@ public class SalehomeEntity {
         this.unitNum = unitNum;
     }
 
+    private Integer roomNum;
+
     @Basic
-    @Column(name = "roomNum", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "roomNum", nullable = true, insertable = true, updatable = true)
     public Integer getRoomNum() {
         return roomNum;
     }
@@ -85,8 +71,10 @@ public class SalehomeEntity {
         this.roomNum = roomNum;
     }
 
+    private Integer room;
+
     @Basic
-    @Column(name = "room", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "room", nullable = true, insertable = true, updatable = true)
     public Integer getRoom() {
         return room;
     }
@@ -95,8 +83,10 @@ public class SalehomeEntity {
         this.room = room;
     }
 
+    private Integer hall;
+
     @Basic
-    @Column(name = "hall", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "hall", nullable = true, insertable = true, updatable = true)
     public Integer getHall() {
         return hall;
     }
@@ -105,8 +95,10 @@ public class SalehomeEntity {
         this.hall = hall;
     }
 
+    private Integer toilet;
+
     @Basic
-    @Column(name = "toilet", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "toilet", nullable = true, insertable = true, updatable = true)
     public Integer getToilet() {
         return toilet;
     }
@@ -115,8 +107,10 @@ public class SalehomeEntity {
         this.toilet = toilet;
     }
 
+    private Integer area;
+
     @Basic
-    @Column(name = "area", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "area", nullable = true, insertable = true, updatable = true)
     public Integer getArea() {
         return area;
     }
@@ -125,8 +119,10 @@ public class SalehomeEntity {
         this.area = area;
     }
 
+    private String homeArea;
+
     @Basic
-    @Column(name = "homeArea", nullable = true, insertable = true, updatable = true, length = 100)
+    @javax.persistence.Column(name = "homeArea", nullable = true, insertable = true, updatable = true, length = 100)
     public String getHomeArea() {
         return homeArea;
     }
@@ -135,8 +131,10 @@ public class SalehomeEntity {
         this.homeArea = homeArea;
     }
 
+    private String busiArea;
+
     @Basic
-    @Column(name = "busiArea", nullable = true, insertable = true, updatable = true, length = 100)
+    @javax.persistence.Column(name = "busiArea", nullable = true, insertable = true, updatable = true, length = 100)
     public String getBusiArea() {
         return busiArea;
     }
@@ -145,8 +143,10 @@ public class SalehomeEntity {
         this.busiArea = busiArea;
     }
 
+    private String conName;
+
     @Basic
-    @Column(name = "conName", nullable = true, insertable = true, updatable = true, length = 100)
+    @javax.persistence.Column(name = "conName", nullable = true, insertable = true, updatable = true, length = 100)
     public String getConName() {
         return conName;
     }
@@ -155,8 +155,10 @@ public class SalehomeEntity {
         this.conName = conName;
     }
 
+    private Integer fitment;
+
     @Basic
-    @Column(name = "fitment", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "fitment", nullable = true, insertable = true, updatable = true)
     public Integer getFitment() {
         return fitment;
     }
@@ -165,8 +167,10 @@ public class SalehomeEntity {
         this.fitment = fitment;
     }
 
+    private Integer unitPrice;
+
     @Basic
-    @Column(name = "unitPrice", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "unitPrice", nullable = true, insertable = true, updatable = true)
     public Integer getUnitPrice() {
         return unitPrice;
     }
@@ -175,8 +179,10 @@ public class SalehomeEntity {
         this.unitPrice = unitPrice;
     }
 
+    private Integer floor;
+
     @Basic
-    @Column(name = "floor", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "floor", nullable = true, insertable = true, updatable = true)
     public Integer getFloor() {
         return floor;
     }
@@ -185,8 +191,10 @@ public class SalehomeEntity {
         this.floor = floor;
     }
 
+    private Integer totalFloor;
+
     @Basic
-    @Column(name = "totalFloor", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "totalFloor", nullable = true, insertable = true, updatable = true)
     public Integer getTotalFloor() {
         return totalFloor;
     }
@@ -195,8 +203,10 @@ public class SalehomeEntity {
         this.totalFloor = totalFloor;
     }
 
+    private Integer direction;
+
     @Basic
-    @Column(name = "direction", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "direction", nullable = true, insertable = true, updatable = true)
     public Integer getDirection() {
         return direction;
     }
@@ -205,8 +215,10 @@ public class SalehomeEntity {
         this.direction = direction;
     }
 
+    private Integer support;
+
     @Basic
-    @Column(name = "support", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "support", nullable = true, insertable = true, updatable = true)
     public Integer getSupport() {
         return support;
     }
@@ -215,8 +227,10 @@ public class SalehomeEntity {
         this.support = support;
     }
 
+    private String title;
+
     @Basic
-    @Column(name = "title", nullable = true, insertable = true, updatable = true, length = 100)
+    @javax.persistence.Column(name = "title", nullable = true, insertable = true, updatable = true, length = 100)
     public String getTitle() {
         return title;
     }
@@ -225,18 +239,22 @@ public class SalehomeEntity {
         this.title = title;
     }
 
-    @Basic
-    @Column(name = "desc", nullable = true, insertable = true, updatable = true, length = 100)
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
+    private String descri;
 
     @Basic
-    @Column(name = "check", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "descri", nullable = true, insertable = true, updatable = true, length = 100)
+    public String getDescri() {
+        return descri;
+    }
+
+    public void setDescri(String descri) {
+        this.descri = descri;
+    }
+
+    private Integer check;
+
+    @Basic
+    @javax.persistence.Column(name = "check", nullable = true, insertable = true, updatable = true)
     public Integer getCheck() {
         return check;
     }
@@ -245,8 +263,10 @@ public class SalehomeEntity {
         this.check = check;
     }
 
+    private Integer attention;
+
     @Basic
-    @Column(name = "attention", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "attention", nullable = true, insertable = true, updatable = true)
     public Integer getAttention() {
         return attention;
     }
@@ -255,8 +275,10 @@ public class SalehomeEntity {
         this.attention = attention;
     }
 
+    private String latlng;
+
     @Basic
-    @Column(name = "latlng", nullable = true, insertable = true, updatable = true, length = 100)
+    @javax.persistence.Column(name = "latlng", nullable = true, insertable = true, updatable = true, length = 100)
     public String getLatlng() {
         return latlng;
     }
@@ -265,8 +287,10 @@ public class SalehomeEntity {
         this.latlng = latlng;
     }
 
+    private Integer fs;
+
     @Basic
-    @Column(name = "FS", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "FS", nullable = true, insertable = true, updatable = true)
     public Integer getFs() {
         return fs;
     }
@@ -275,8 +299,10 @@ public class SalehomeEntity {
         this.fs = fs;
     }
 
+    private Date checkInTime;
+
     @Basic
-    @Column(name = "checkInTime", nullable = true, insertable = true, updatable = true)
+    @javax.persistence.Column(name = "checkInTime", nullable = true, insertable = true, updatable = true)
     public Date getCheckInTime() {
         return checkInTime;
     }
@@ -300,7 +326,7 @@ public class SalehomeEntity {
         if (check != null ? !check.equals(that.check) : that.check != null) return false;
         if (checkInTime != null ? !checkInTime.equals(that.checkInTime) : that.checkInTime != null) return false;
         if (conName != null ? !conName.equals(that.conName) : that.conName != null) return false;
-        if (desc != null ? !desc.equals(that.desc) : that.desc != null) return false;
+        if (descri != null ? !descri.equals(that.descri) : that.descri != null) return false;
         if (direction != null ? !direction.equals(that.direction) : that.direction != null) return false;
         if (fitment != null ? !fitment.equals(that.fitment) : that.fitment != null) return false;
         if (floor != null ? !floor.equals(that.floor) : that.floor != null) return false;
@@ -342,7 +368,7 @@ public class SalehomeEntity {
         result = 31 * result + (direction != null ? direction.hashCode() : 0);
         result = 31 * result + (support != null ? support.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (desc != null ? desc.hashCode() : 0);
+        result = 31 * result + (descri != null ? descri.hashCode() : 0);
         result = 31 * result + (check != null ? check.hashCode() : 0);
         result = 31 * result + (attention != null ? attention.hashCode() : 0);
         result = 31 * result + (latlng != null ? latlng.hashCode() : 0);

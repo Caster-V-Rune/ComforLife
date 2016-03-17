@@ -62,8 +62,8 @@
         <property name="title">
             <column name="title" sql-type="varchar" length="100"/>
         </property>
-        <property name="desc">
-            <column name="desc" sql-type="varchar" length="100"/>
+        <property name="descri">
+            <column name="descri" sql-type="varchar" length="100"/>
         </property>
         <property name="check">
             <column name="check" sql-type="int"/>

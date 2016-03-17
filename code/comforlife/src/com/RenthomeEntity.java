@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/3/16.
+ * Created by Administrator on 2016/3/17.
  */
 @Entity
 @javax.persistence.Table(name = "renthome", schema = "", catalog = "comforlife")
@@ -288,16 +288,16 @@ public class RenthomeEntity {
         this.title = title;
     }
 
-    private String desc;
+    private String descri;
 
     @Basic
-    @javax.persistence.Column(name = "desc", nullable = true, insertable = true, updatable = true, length = 65535)
-    public String getDesc() {
-        return desc;
+    @javax.persistence.Column(name = "descri", nullable = true, insertable = true, updatable = true, length = 65535)
+    public String getDescri() {
+        return descri;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescri(String descri) {
+        this.descri = descri;
     }
 
     private Date checkInTime;
@@ -372,7 +372,7 @@ public class RenthomeEntity {
         if (checkInTime != null ? !checkInTime.equals(that.checkInTime) : that.checkInTime != null) return false;
         if (conName != null ? !conName.equals(that.conName) : that.conName != null) return false;
         if (depositType != null ? !depositType.equals(that.depositType) : that.depositType != null) return false;
-        if (desc != null ? !desc.equals(that.desc) : that.desc != null) return false;
+        if (descri != null ? !descri.equals(that.descri) : that.descri != null) return false;
         if (direction != null ? !direction.equals(that.direction) : that.direction != null) return false;
         if (floor != null ? !floor.equals(that.floor) : that.floor != null) return false;
         if (floorNum != null ? !floorNum.equals(that.floorNum) : that.floorNum != null) return false;
@@ -412,7 +412,7 @@ public class RenthomeEntity {
         result = 31 * result + (depositType != null ? depositType.hashCode() : 0);
         result = 31 * result + (support != null ? support.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (desc != null ? desc.hashCode() : 0);
+        result = 31 * result + (descri != null ? descri.hashCode() : 0);
         result = 31 * result + (checkInTime != null ? checkInTime.hashCode() : 0);
         result = 31 * result + (check != null ? check.hashCode() : 0);
         result = 31 * result + (attention != null ? attention.hashCode() : 0);

@@ -122,7 +122,7 @@ public class addHouse extends ActionSupport {
             renthomeEntity.setDepositType(new Integer(DepositType));
             renthomeEntity.setSupport(new Integer(Support));
             renthomeEntity.setTitle(Title);
-            renthomeEntity.setDesc(Desc);
+            renthomeEntity.setDescri(Desc);
             renthomeEntity.setCheckInTime(new Date(new Long(CheckInTime)));
             hibernateOperation.insertRentHouse(renthomeEntity);
             return "yes";

@@ -66,13 +66,14 @@ public class NewsRelease extends ActionSupport {
     public String execute() throws Exception {
         NewsEntity newsEntity = new NewsEntity();
         newsEntity.setTitle(Title);
-        newsEntity.setDesc(Desc);
-        Timestamp time = new Timestamp(new java.util.Date().getTime());
+        newsEntity.setDescri(Desc);
+        Timestamp time = new Timestamp(System.currentTimeMillis());
         newsEntity.setTime(time);
         newsEntity.setAuthor(author);
         newsEntity.setSummary(summary);
         newsEntity.setTop(0);
         newsEntity.setClick(0);
+        //newsEntity.setId(2016031305);
         hibernateOperation.insertNews(newsEntity);
         return "yes";
     }

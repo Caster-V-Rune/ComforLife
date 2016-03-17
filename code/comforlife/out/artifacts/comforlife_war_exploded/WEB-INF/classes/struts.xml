@@ -38,7 +38,7 @@
             <result name="yes">/templates/adminAddNews.jsp</result>
         </action>
         <action name="addNews" class="com.NewsRelease">
-            <result name="yes">/templates/news.jsp</result>
+            <result name="yes" type="chain">newsList</result>
         </action>
         <action name="changePassword" class="com.userInfo" method="changePassword">
             <result name="yes">/templates/userInfo.jsp</result>
@@ -52,7 +52,7 @@
         <action name="delUser" class="com.userInfo" method="delUser">
             <result name="yes">/templates/redir.html</result>
         </action>
-        <action name="showNews" class="com.news">
+        <action name="news" class="com.news">
             <result name="yes">/templates/post.jsp</result>
         </action>
     </package>

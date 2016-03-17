@@ -232,7 +232,7 @@
                         <div class="fnews">热点新闻</div>
 
                         <c:forEach var="news" items="${newsList}" varStatus="status">
-                            <li class="news"><a href="/struts/news.action?id=${news.id}">${news.title}</a></li>
+                            <li class="news"><a href="/struts/news.action?ID=${news.id}">${news.title}</a></li>
                         </c:forEach>
 
                     </div>

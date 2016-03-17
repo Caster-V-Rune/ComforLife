@@ -62,7 +62,7 @@
                     <p class="news-summary">
                             ${news.summary}
                     </p>
-                    <a href="/struts/news.action?id=${news.id}">
+                    <a href="/struts/news.action?ID=${news.id}">
                         <button class="btn news-fullbtn">阅读全文</button>
                     </a>
                 </div>
