@@ -272,6 +272,22 @@
                 </div>
             </div>
             <input type="hidden" id="lal">
+            <div class="img-box">
+                <div id="dragandrophandler">Drag & Drop Files Here</div>
+                <table class="table table-striped img-list">
+                    <tbody class="img-table">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!--輔助用勿管-->
+            <input type="file" name="file" id="file" style="display: none">
+
+            <input type="hidden" id="img1base64">
+            <input type="hidden" id="img2base64">
+            <input type="hidden" id="img3base64">
+
             <div class="col-md-offset-5 col-md-2">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
@@ -473,8 +489,21 @@
                 </div>
             </div>
             <input type="hidden" id="lals">
-            <input type="file" id="file">
-            <div style="width: 20px;height: 20px; background-color: red" id="aaa"></div>
+            <div class="img-box">
+                <div id="dragandrophandlers">Drag & Drop Files Here</div>
+                <table class="table table-striped img-lists">
+                    <tbody class="img-tables">
+
+                    </tbody>
+                </table>
+            </div>
+            <!--輔助用勿管-->
+            <input type="file" name="files" id="files" style="display: none">
+
+            <input type="hidden" id="imgs1base64">
+            <input type="hidden" id="imgs2base64">
+            <input type="hidden" id="imgs3base64">
+
             <div class="col-md-offset-5 col-md-2">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
@@ -511,6 +540,7 @@
     <script src="assets/js/masonry.pkgd.min.js"></script>
     <script src="assets/js/json2.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.base64.js"></script>
     <script type="text/javascript">
         // 百度地图API功能
         function G(id) {
@@ -638,26 +668,293 @@
                 $('#sf').show();
                 $('#zf').hide();
             });
-            var gf = function(){
-                var files = $('input[id="file"]').prop('files');//获取到文件列表
 
-                if(files.length == 0){
-                    alert('请选择文件');
-                    return;
-                }else{
-                    var reader = new FileReader();//新建一个FileReader
-                    reader.readAsText(files[0], "UTF-8");//读取文件
-                    reader.onload = function(evt){ //读取完文件之后会回来这里
-                        var fileString = evt.target.result;
-                        console.log(fileString);
-                    }
-                }
-            }
-            $('#aaa').on('click',function(){
-                console.log(gf());
-            })
         });
     </script>
+    <script>
 
+        $(function(){
+            Array.prototype.remove=function(dx) {
+                if(isNaN(dx)||dx>this.length){return false;}
+                for(var i=0,n=0;i<this.length;i++)
+                {
+                    if(this[i]!=this[dx])
+                    {
+                        this[n++]=this[i]
+                    }
+                }
+                this.length-=1
+            }
+            var imgs = [];
+            var obj = $("#dragandrophandler");
+            obj.on('dragenter', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                $(this).css('border', '2px solid #0B85A1');
+            });
+            obj.on('dragover', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            obj.on('drop', function (e) {
+
+                $(this).css('border', '2px dotted #0B85A1');
+                e.preventDefault();
+                var files = e.originalEvent.dataTransfer.files;
+
+                //We need to send dropped files to Server
+//                handleFileUpload(files,obj);
+                var reader = new FileReader();
+
+                reader.readAsBinaryString(files[0]);
+                reader.onload = function(evt){
+                    var fileString = evt.target.result;
+                    var l = imgs.length;
+                    imgs[l]={};
+                    var n = files[0].name;
+                    n = n.split('\\');
+                    n = n[n.length-1];
+                    if (n == ''){
+                        imgs[l].name = 'img'+l;
+                    }
+                    else {
+                        imgs[l].name = n;
+                    }
+                    imgs[l].basev = $.base64.encode(fileString);
+                    $('.img-table').html('');
+                    imgs.forEach(function(e,i){
+                        console.log(i);
+                        console.log(e);
+
+                        var h = '<tr> <td> <a id="'+
+                                i+
+                                '">'+
+                                e.name+
+                                '</a> </td> <td align="right"> <button type="button" class="btn btn-danger btn-xs img-delete">刪除</button> </td> </tr>';
+                        $('.img-table').prepend(h);
+                        $('#'+i).popover({
+                            html: true,
+                            placement: 'top',
+                            trigger: 'click focus',
+                            content: '<img height="200px" width="200px" src="data:image/jpeg;base64,'+ e.basev+'" alt="">'
+                        });
+                        $('.img-delete').on('click', function (){
+                            var deleteid = $($(this).parents('td').siblings('td')[0]).children('a').attr('id');
+                            $(this).parents('tr').remove();
+                            imgs.remove(deleteid);
+
+                        });
+                    });
+                    $('#img1base64').val(imgs[0]?imgs[0].basev:'');
+                    $('#img2base64').val(imgs[1]?imgs[1].basev:'');
+                    $('#img3base64').val(imgs[2]?imgs[2].basev:'');
+
+                }
+            });
+            $(document).on('dragenter', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            $(document).on('dragover', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                obj.css('border', '2px dotted #0B85A1');
+            });
+            $(document).on('drop', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            $('#dragandrophandler').on('click',function(){
+                $('#file').click();
+
+            });
+            $('#file').on('change', function(){
+                var files = $('input[id="file"]').prop('files');
+
+                if(files.length == 0){
+                    return;
+                }else{
+                    var reader = new FileReader();
+
+                    reader.readAsBinaryString(files[0]);
+                    reader.onload = function(evt){
+                        var fileString = evt.target.result;
+                        var l = imgs.length;
+                        imgs[l]={};
+                        var n = $('input[id="file"]').val();
+                        n = n.split('\\');
+                        n = n[n.length-1];
+                        imgs[l].name = n;
+                        imgs[l].basev = $.base64.encode(fileString);
+                        $('.img-table').html('');
+                        imgs.forEach(function(e,i){
+                            console.log(i);
+                            console.log(e);
+
+                            var h = '<tr> <td> <a id="'+
+                                    i+
+                                    '">'+
+                                    e.name+
+                                    '</a> </td> <td align="right"> <button type="button" class="btn btn-danger btn-xs img-delete">刪除</button> </td> </tr>';
+                            $('.img-table').prepend(h);
+                            $('#'+i).popover({
+                                html: true,
+                                placement: 'top',
+                                trigger: 'click focus',
+                                content: '<img height="200px" width="200px" src="data:image/jpeg;base64,'+ e.basev+'" alt="">'
+                            });
+                            $('.img-delete').on('click', function (){
+                                var deleteid = $($(this).parents('td').siblings('td')[0]).children('a').attr('id');
+                                $(this).parents('tr').remove();
+                                imgs.remove(deleteid);
+
+                            });
+                        });
+                        $('#img1base64').val(imgs[0]?imgs[0].basev:'');
+                        $('#img2base64').val(imgs[1]?imgs[1].basev:'');
+                        $('#img3base64').val(imgs[2]?imgs[2].basev:'');
+                        console.log($('#img1base64').val());
+                    }
+                }
+            });
+
+
+
+
+
+            var imgss = [];
+            var objs = $("#dragandrophandlers");
+            objs.on('dragenter', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                $(this).css('border', '2px solid #0B85A1');
+            });
+            objs.on('dragover', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            objs.on('drop', function (e) {
+
+                $(this).css('border', '2px dotted #0B85A1');
+                e.preventDefault();
+                var files = e.originalEvent.dataTransfer.files;
+
+                //We need to send dropped files to Server
+//                handleFileUpload(files,obj);
+                var reader = new FileReader();
+
+                reader.readAsBinaryString(files[0]);
+                reader.onload = function(evt){
+                    var fileString = evt.target.result;
+                    var l = imgss.length;
+                    imgss[l]={};
+                    var n = files[0].name;
+                    n = n.split('\\');
+                    n = n[n.length-1];
+                    if (n == ''){
+                        imgss[l].name = 'img'+l;
+                    }
+                    else {
+                        imgss[l].name = n;
+                    }
+                    imgss[l].basev = $.base64.encode(fileString);
+                    $('.img-tables').html('');
+                    imgss.forEach(function(e,i){
+                        console.log(i);
+                        console.log(e);
+
+                        var h = '<tr> <td> <a id="'+
+                                i+
+                                's">'+
+                                e.name+
+                                '</a> </td> <td align="right"> <button type="button" class="btn btn-danger btn-xs img-deletes">刪除</button> </td> </tr>';
+                        $('.img-table').prepend(h);
+                        $('#'+i+'s').popover({
+                            html: true,
+                            placement: 'top',
+                            trigger: 'click focus',
+                            content: '<img height="200px" width="200px" src="data:image/jpeg;base64,'+ e.basev+'" alt="">'
+                        });
+                        $('.img-deletes').on('click', function (){
+                            var deleteid = $($(this).parents('td').siblings('td')[0]).children('a').attr('id');
+                            console.log(deleteid);
+                            console.log($(this).parents('tr'));
+                            $(this).parents('tr').remove();
+                            imgss.remove(deleteid.split('s')[0]);
+
+                        });
+                    });
+                    $('#imgs1base64').val(imgss[0]?imgss[0].basev:'');
+                    $('#imgs2base64').val(imgss[1]?imgss[1].basev:'');
+                    $('#imgs3base64').val(imgss[2]?imgss[2].basev:'');
+                }
+            });
+            $(document).on('dragenter', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            $(document).on('dragover', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                objs.css('border', '2px dotted #0B85A1');
+            });
+            $(document).on('drop', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            $('#dragandrophandlers').on('click',function(){
+                $('#files').click();
+            });
+            $('#files').on('change', function(){
+                var files = $('input[id="files"]').prop('files');
+
+                if(files.length == 0){
+                    return;
+                }else{
+                    var reader = new FileReader();
+
+                    reader.readAsBinaryString(files[0]);
+                    reader.onload = function(evt){
+                        var fileString = evt.target.result;
+                        var l = imgss.length;
+                        imgss[l]={};
+                        var n = $('input[id="files"]').val();
+                        n = n.split('\\');
+                        n = n[n.length-1];
+                        imgss[l].name = n;
+                        imgss[l].basev = $.base64.encode(fileString);
+                        $('.img-tables').html('');
+                        imgss.forEach(function(e,i){
+                            console.log(i);
+                            console.log(e);
+
+                            var h = '<tr> <td> <a id="'+
+                                    i+
+                                    's">'+
+                                    e.name+
+                                    '</a> </td> <td align="right"> <button type="button" class="btn btn-danger btn-xs img-deletes">刪除</button> </td> </tr>';
+                            $('.img-tables').prepend(h);
+                            $('#'+i+'s').popover({
+                                html: true,
+                                placement: 'top',
+                                trigger: 'click focus',
+                                content: '<img height="200px" width="200px" src="data:image/jpeg;base64,'+ e.basev+'" alt="">'
+                            });
+                            $('.img-deletes').on('click', function (){
+                                var deleteid = $($(this).parents('td').siblings('td')[0]).children('a').attr('id');
+                                console.log(deleteid);
+                                console.log($(this).parents('tr'));
+                                $(this).parents('tr').remove();
+                                imgss.remove(deleteid.split('s')[0]);
+                            });
+                        });
+                        $('#imgs1base64').val(imgss[0]?imgss[0].basev:'');
+                        $('#imgs2base64').val(imgss[1]?imgss[1].basev:'');
+                        $('#imgs3base64').val(imgss[2]?imgss[2].basev:'');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
