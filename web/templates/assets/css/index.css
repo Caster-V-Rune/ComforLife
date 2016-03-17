@@ -133,23 +133,32 @@ body {
 }
 .details {
   margin-top: 50px;
-  padding-top: 40px;
+  padding: 40px 0 0 0;
+  overflow: hidden;
   background-color: #fcfcfc;
 }
-.details .detail {
+.details .detail-list {
+  float: left;
+  overflow: hidden;
+  width: 70%;
+  margin: 10px auto;
+  padding: 0;
+  height: 100%;
+}
+.details .detail-list .detail {
   height: 480px;
   position: relative;
   left: 10%;
-  width: 80%;
+  width: 90%;
 }
-.details .detail .detail-header {
+.details .detail-list .detail .detail-header {
   width: 100%;
   font-size: 25px;
 }
-.details .detail .detail-line {
+.details .detail-list .detail .detail-line {
   height: 3px;
 }
-.details .detail .detail-line .line1 {
+.details .detail-list .detail .detail-line .line1 {
   float: left;
   width: 29%;
   height: 3px;
@@ -158,7 +167,7 @@ body {
   background-color: red;
   overflow: hidden;
 }
-.details .detail .detail-line .line2 {
+.details .detail-list .detail .detail-line .line2 {
   float: left;
   width: 70%;
   height: 3px;
@@ -167,11 +176,11 @@ body {
   background-color: red;
   overflow: hidden;
 }
-.details .detail .detail-container {
+.details .detail-list .detail .detail-container {
   position: relative;
   width: 100%;
 }
-.details .detail .detail-container .house-list {
+.details .detail-list .detail .detail-container .house-list {
   float: left;
   overflow: hidden;
   width: 30%;
@@ -180,7 +189,7 @@ body {
   position: relative;
   height: 400px;
 }
-.details .detail .detail-container .house-list .xuxian {
+.details .detail-list .detail .detail-container .house-list .xuxian {
   float: left;
   width: 5%;
   height: 100%;
@@ -188,19 +197,19 @@ body {
   border-right-width: 2px;
   border-right-color: #c8c8c8;
 }
-.details .detail .detail-container .house-list .list {
+.details .detail-list .detail .detail-container .house-list .list {
   float: left;
   width: 85%;
   height: 100%;
 }
-.details .detail .detail-container .house-list .list .flist {
+.details .detail-list .detail .detail-container .house-list .list .flist {
   width: 94%;
   height: 40%;
 }
-.details .detail .detail-container .house-list .list .flist .tag {
+.details .detail-list .detail .detail-container .house-list .list .flist .tag {
   height: 15px;
 }
-.details .detail .detail-container .house-list .list .flist .tag .dian {
+.details .detail-list .detail .detail-container .house-list .list .flist .tag .dian {
   width: 6px;
   height: 6px;
   background-color: #fcfcfc;
@@ -213,7 +222,7 @@ body {
   top: 7px;
   overflow: visible;
 }
-.details .detail .detail-container .house-list .list .flist .tag .house-list-title {
+.details .detail-list .detail .detail-container .house-list .list .flist .tag .house-list-title {
   margin-left: 4px;
   padding-left: 5px;
   font-size: 15px;
@@ -224,7 +233,7 @@ body {
   border-radius: 2px;
   color: white;
 }
-.details .detail .detail-container .house-list .list .flist .tag .house-list-title-bg {
+.details .detail-list .detail .detail-container .house-list .list .flist .tag .house-list-title-bg {
   position: relative;
   float: left;
   width: 0;
@@ -235,34 +244,34 @@ body {
   top: -15px;
   left: 74px;
 }
-.details .detail .detail-container .house-list .list .flist .one-house {
+.details .detail-list .detail .detail-container .house-list .list .flist .one-house {
   height: 30px;
   padding: 5px;
   margin: 5px;
   position: relative;
 }
-.details .detail .detail-container .house-list .list .flist .one-house .house-name {
+.details .detail-list .detail .detail-container .house-list .list .flist .one-house .house-name {
   color: black;
   width: 70%;
   text-align: left;
   float: left;
 }
-.details .detail .detail-container .house-list .list .flist .one-house .house-price {
+.details .detail-list .detail .detail-container .house-list .list .flist .one-house .house-price {
   color: #505050;
   width: 30%;
   text-align: left;
   float: left;
 }
-.details .detail .detail-container .house-list .list .tlist {
+.details .detail-list .detail .detail-container .house-list .list .tlist {
   position: relative;
   height: 60%;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list {
   position: relative;
   overflow: auto;
   height: 100%;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list .tag .dian {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .tag .dian {
   width: 6px;
   height: 6px;
   background-color: #fcfcfc;
@@ -276,7 +285,7 @@ body {
   left: -4px;
   overflow: visible;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list .tag .house-list-title {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .tag .house-list-title {
   margin-left: 4px;
   padding-left: 5px;
   font-size: 15px;
@@ -287,7 +296,7 @@ body {
   border-radius: 2px;
   color: white;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list .tag .house-list-title-bg {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .tag .house-list-title-bg {
   position: relative;
   float: left;
   width: 0;
@@ -298,46 +307,46 @@ body {
   top: -15px;
   left: 74px;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list .one-house {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .one-house {
   height: 30px;
   padding: 5px;
   margin: 5px;
   position: relative;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list .one-house .house-name {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .one-house .house-name {
   color: black;
   width: 70%;
   text-align: left;
   float: left;
 }
-.details .detail .detail-container .house-list .list .tlist .scroll-list .one-house .house-price {
+.details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .one-house .house-price {
   color: #505050;
   width: 30%;
   text-align: left;
   float: left;
 }
-.details .detail .detail-container .house-pictures {
+.details .detail-list .detail .detail-container .house-pictures {
   float: left;
   overflow: hidden;
-  width: 50%;
+  width: 70%;
   margin: 10px auto;
   padding: 0;
   position: relative;
   height: 400px;
 }
-.details .detail .detail-container .house-pictures .fpic {
+.details .detail-list .detail .detail-container .house-pictures .fpic {
   margin: 1%;
   float: left;
   padding: 0;
   width: 62%;
   height: 48%;
 }
-.details .detail .detail-container .house-pictures .fpic img {
+.details .detail-list .detail .detail-container .house-pictures .fpic img {
   margin: 0;
   width: 100%;
   height: 100%;
 }
-.details .detail .detail-container .house-pictures .fpic .fpic-des {
+.details .detail-list .detail .detail-container .house-pictures .fpic .fpic-des {
   margin: 0;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.2)), to(black));
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), black);
@@ -352,19 +361,19 @@ body {
   font-size: 20px;
   color: white;
 }
-.details .detail .detail-container .house-pictures .pic {
+.details .detail-list .detail .detail-container .house-pictures .pic {
   margin: 1%;
   float: left;
   padding: 0;
   width: 30%;
   height: 48%;
 }
-.details .detail .detail-container .house-pictures .pic img {
+.details .detail-list .detail .detail-container .house-pictures .pic img {
   margin: 0;
   width: 100%;
   height: 100%;
 }
-.details .detail .detail-container .house-pictures .pic .pic-des {
+.details .detail-list .detail .detail-container .house-pictures .pic .pic-des {
   margin: 0;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.2)), to(black));
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), black);
@@ -378,7 +387,7 @@ body {
   font-size: 20px;
   color: white;
 }
-.details .detail .detail-container .house-news {
+.details .house-news {
   float: left;
   overflow: hidden;
   width: 20%;
@@ -386,26 +395,34 @@ body {
   padding: 0;
   height: 400px;
 }
-.details .detail .detail-container .house-news .news-header {
-  margin: 10px auto;
+.details .house-news .line {
+  height: 3px;
+  margin: 0 8px 0 auto;
+  padding: 0;
+  background-color: red;
+  overflow: hidden;
+  width: 100%;
+}
+.details .house-news .news-header {
+  margin: 7px auto 8px auto;
   height: 5%;
 }
-.details .detail .detail-container .house-news .news-header .news-header-name {
+.details .house-news .news-header .news-header-name {
   font-size: 15px;
   float: left;
   width: 90%;
   margin: 0;
 }
-.details .detail .detail-container .house-news .news-header .news-header-icon {
+.details .house-news .news-header .news-header-icon {
   float: left;
   margin: 0;
 }
-.details .detail .detail-container .house-news .news-block .fnews {
+.details .house-news .news-block .fnews {
   text-align: center;
   color: red;
   font-size: large;
 }
-.details .detail .detail-container .house-news .news-block .news {
+.details .house-news .news-block .news {
   text-align: left;
   color: black;
   margin: 5px auto;
