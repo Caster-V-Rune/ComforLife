@@ -283,10 +283,8 @@
                 </div>
 
             </div></div>
+            <input type="hidden" id="imgs">
 
-            <input type="hidden" id="img1base64">
-            <input type="hidden" id="img2base64">
-            <input type="hidden" id="img3base64">
 
             <div class="col-md-offset-5 col-md-2">
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -489,20 +487,15 @@
                 </div>
             </div>
             <input type="hidden" id="lals">
-            <div class="img-box">
-                <div id="dragandrophandlers">Drag & Drop Files Here</div>
-                <table class="table table-striped img-lists">
-                    <tbody class="img-tables">
+            <div id="dropzones">
+                <div class="dropzone needsclick dz-clickable" id="demo-uploads">
 
-                    </tbody>
-                </table>
-            </div>
-            <!--輔助用勿管-->
-            <input type="file" name="files" id="files" style="display: none">
+                    <div class="dz-message needsclick">
+                        Drop files here or click to upload.<br>
+                    </div>
 
-            <input type="hidden" id="imgs1base64">
-            <input type="hidden" id="imgs2base64">
-            <input type="hidden" id="imgs3base64">
+                </div></div>
+            <input type="hidden" id="imgss">
 
             <div class="col-md-offset-5 col-md-2">
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -994,6 +987,46 @@
                     this.on("success", function(file, responseText, e) {
                         // Handle the responseText here. For example, add the text to the preview element:
 //                        file.previewTemplate.appendChild(document.createTextNode(responseText));
+                        var s = $('#imgs').val();
+                        $('#imgs').val(s+responseText+';');
+                    });
+                }
+            });
+            $("div#demo-uploads").dropzone({
+                url: "/file/post",
+                maxFiles: 8,
+                maxFilesize: 512,
+                acceptedFiles: ".png,.jpg,.jpeg",
+                init: function() {
+                    this.on("addedfile", function(file) {
+
+                        // Create the remove button
+                        var removeButton = Dropzone.createElement("<button class='btn btn-default'>Remove file</button>");
+
+
+                        // Capture the Dropzone instance as closure.
+                        var _this = this;
+
+                        // Listen to the click event
+                        removeButton.addEventListener("click", function(e) {
+                            // Make sure the button click doesn't submit the form:
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            // Remove the file preview.
+                            _this.removeFile(file);
+                            // If you want to the delete the file on the server as well,
+                            // you can do the AJAX request here.
+                        });
+
+                        // Add the button to the file preview element.
+                        file.previewElement.appendChild(removeButton);
+                    });
+                    this.on("success", function(file, responseText, e) {
+                        // Handle the responseText here. For example, add the text to the preview element:
+//                        file.previewTemplate.appendChild(document.createTextNode(responseText));
+                        var s = $('#imgss').val();
+                        $('#imgss').val(s+responseText+';');
                     });
                 }
             });
