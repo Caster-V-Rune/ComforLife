@@ -1,0 +1,6 @@
+.idea/*
+lib/*
+*.name
+web/templates/.idea/encodings.xml
+*.xml
+web/templates/.idea/templates.iml

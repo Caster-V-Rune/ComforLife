@@ -1,0 +1,119 @@
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: #0d3966;
+}
+.zhanwei {
+  width: 100%;
+  height: 70px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.information {
+  position: relative;
+  height: 100%;
+  max-width: 1080px;
+  margin: 10px auto;
+}
+.information #info {
+  font-size: large;
+  width: 80%;
+  margin: 20px auto;
+}
+.information .info-table {
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.information .info-table .info-cell {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+.information .info-table .info-cell .info-type {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  text-align: center;
+  background-color: #E0E0E0;
+  border: 1px solid white;
+}
+.information .info-table .info-cell .info-value {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  text-align: center;
+  background-color: #F6F6F6;
+  border: 1px solid white;
+}
+.information .info-detail {
+  width: 80%;
+  padding: 5px;
+  margin: 20px auto;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+.information .info-detail .info-poeple {
+  width: 25%;
+  float: left;
+  border-right: 1px solid #e0e0e0;
+  padding: 2px;
+}
+.information .info-detail .info-poeple .name {
+  font-weight: bold;
+  color: gray;
+  padding: 5px;
+}
+.information .info-detail .info-poeple .phone-number {
+  background-color: red;
+  color: white;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 5px;
+}
+.information .info-detail .info-description {
+  padding: 2px;
+  margin-left: 2%;
+  width: 73%;
+  position: relative;
+  float: left;
+}
+.information #pic {
+  font-size: large;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  padding: 5px;
+}
+.information .pics {
+  width: 80%;
+  margin: 20px auto;
+}
+.information .pics img {
+  padding: 10px;
+  width: 400px;
+  max-width: 400px;
+}
+.information #map-title {
+  font-size: large;
+  width: 80%;
+  margin: 20px auto;
+}
+.information #map {
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+}

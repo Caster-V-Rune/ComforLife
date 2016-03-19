@@ -83,13 +83,11 @@
                             <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="personManage.html"><i class="fa fa-user fa-fw"></i> 用户账户</a>
-                            </li>
-                            <li><a href="userInfo.html"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                            <li><a href="/templates/user?user_id=<%=s.getAttribute("id") %>"><i class="fa fa-user fa-fw"></i> 用户账户</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
-                            </li>
+                            <li><a href='/struts/delSession.action'>註銷</a></li>
+
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>

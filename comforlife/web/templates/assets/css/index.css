@@ -48,9 +48,11 @@ body {
   text-align: inherit;
 }
 .first-page .house-search .logo {
-    background-image: url('../images/logo.png');
   height: 45%;
-  background-color: #2b542c;
+  background-image: url(../images/logo.png);
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 .first-page .house-search .search-type {
   height: 25%;

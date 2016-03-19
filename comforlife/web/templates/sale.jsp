@@ -29,56 +29,137 @@
     <link rel="stylesheet" href="assets/css/show.css">
 </head>
 <body>
-<div class="header">
+    <div class="header">
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="">ComforLife</a>
-            </div>
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <a class="navbar-brand" href="">ComforLife</a>
+    </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class=""><a href="/struts/search.action?kw=&type=1&rentPay=0&salePay=0&room=0&rentType=0">ÕÒ×â·¿</a></li>
-                    <li><a href="/struts/search.action?kw=&type=0&rentPay=0&salePay=0&room=0&rentType=0">ÙIĞÂ·¿</a></li>
-                    <li><a href="/struts/search.action?kw=&type=2&rentPay=0&salePay=0&room=0&rentType=0">ÙI¶şÊÖ·¿</a></li>
-                    <li><a href="/struts/newsList.action">ĞÂÂ„</a></li>
-                </ul>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+    <li class=""><a href="/struts/search.action?kw=&type=1&rentPay=0&salePay=0&room=0&rentType=0">æ‰¾ç§Ÿæˆ¿</a></li>
+    <li><a href="/struts/search.action?kw=&type=0&rentPay=0&salePay=0&room=0&rentType=0">è²·æ–°æˆ¿</a></li>
+    <li><a href="/struts/search.action?kw=&type=2&rentPay=0&salePay=0&room=0&rentType=0">è²·äºŒæ‰‹æˆ¿</a></li>
+    <li><a href="/struts/newsList.action">æ–°è</a></li>
+    </ul>
 
-                <%
+        <%
                     HttpSession s = request.getSession(false);
                     if (s.getAttribute("user") == null)
                     {
-                        System.out.print("123");
-                %>
+                    System.out.print("123");
+                    %>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">µÇä›</a></li>
-                    <li><a href="">Ô]ƒÔ</a></li>
-                </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a data-toggle="modal" data-target="#login">ç™»éŒ„</a></li>
+    <li><a data-toggle="modal" data-target="#signup">è¨»å†Š</a></li>
+    </ul>
 
-                <%
-                }
-                else
-                {
-                %>
-
-                <%=s.getAttribute("user") %>
-                <%
+        <%
                     }
-                %>
+                    else
+                    {
+                    %>
 
-            </div><!-- /.navbar-collapse -->        </div><!-- /.container-fluid -->
+        <%=s.getAttribute("user") %>
+
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href='/templates/user?user_id=<%=s.getAttribute("id") %>'><%=s.getAttribute("user") %></a></li>
+    <li><a href='/struts/delSession.action'>è¨»éŠ·</a></li>
+    </ul>
+        <%
+                    }
+                    %>
+
+
+    </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
     </nav>
 
-</div>
+    </div><!-- Modal -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="login-label">ç”¨æˆ·ç™»é™†</h4>
+    </div>
+    <div class="modal-body">
+    <form action="/struts/denglu.action" id="loginform">
+    <div class="form-group">
+    <label for="lemail">é‚®ç®±</label>
+    <input name = "username" type="email" class="form-control" id="lemail" placeholder="é‚®ç®±">
+    </div>
+    <div class="form-group">
+    <label for="lpassword">å¯†ç </label>
+    <input  name = "password" type="password" class="form-control" id="lpassword" placeholder="å¯†ç ">
+    </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">å…³é—­</button>
+    <button type="button" class="btn btn-primary loginbtn">ç™»é™†</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signup">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="signup-label">ç”¨æˆ·æ³¨å†Œ</h4>
+    </div>
+    <div class="modal-body">
+    <form action="/struts/zhuce.action" id="signupform">
+    <div class="form-group">
+    <label for="semail">é‚®ç®±</label>
+    <input name = "username" type="email" class="form-control" id="semail" placeholder="é‚®ç®±">
+    </div>
+    <div class="form-group">
+    <label for="spassword">å¯†ç </label>
+    <input name = "password"  type="password" class="form-control" id="spassword" placeholder="å¯†ç ">
+    </div>
+    <div class="form-group">
+    <label for="confirm">ç¡®è®¤å¯†ç </label>
+    <input type="password" class="form-control" id="confirm" placeholder="ç¡®è®¤å¯†ç ">
+    </div>
+    <div class="form-group">
+    <label for="name">å§“å</label>
+    <input name="name" type="email" class="form-control" id="name" placeholder="å§“å">
+    </div>
+    <div class="form-group">
+    <label for="phone">æ‰‹æœº</label>
+    <input name="phone" type="text" class="form-control" id="phone" placeholder="æ‰‹æœº">
+    </div>
+    <div class="form-group">
+    <label for="check">éªŒè¯ç </label>
+    <div class="input-group">
+    <input name="identifyingCode" type="text" class="form-control" id="check" placeholder="éªŒè¯ç ">
+    <span class="input-group-btn">
+    <button class="btn btn-default check-btn" type="button">å‘é€éªŒè¯ç </button>
+    </span>
+    </div>
+    </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">å…³é—­</button>
+    <button type="button" class="btn btn-primary signupbtn">æ³¨å†Œ</button>
+    </div>
+    </div>
+    </div>
+    </div>
 <div class="zhanwei"></div>
 
 <div class="shop-container">
     <ol class="breadcrumb">
-        <li><a href="">ÒË¾Ó</a></li>
-        <li><a href="">Âò·¿</a></li>
+        <li><a href="">ï¿½Ë¾ï¿½</a></li>
+        <li><a href="">ï¿½ï¿½</a></li>
         <li class="active"><a href=""><% out.println(home.getConName());%></a></li>
     </ol>
     <div class="shop-first-row">
@@ -97,28 +178,28 @@
             <hr>
             <div class="shop-description">
                 <p>
-                    ƒr¸ñ:<% out.println(home.getUnitPrice()); %>Ôª/Æ½·½Ã×
+                    ï¿½rï¿½ï¿½:<% out.println(home.getUnitPrice()); %>Ôª/Æ½ï¿½ï¿½ï¿½ï¿½
                 </p>
                 <hr>
                 <p>
-                    Ğ¡…^:<% out.println(home.getConName()); %>
+                    Ğ¡ï¿½^:<% out.println(home.getConName()); %>
                 </p>
                 <hr>
                 <p>
-                    ½»Í¨:<% out.println(home.getBusiArea()); %>
+                    ï¿½ï¿½Í¨:<% out.println(home.getBusiArea()); %>
                 </p>
                 <hr>
                 <p>
-                    ·¿Îİ¸Å›r:<% out.println(home.getFloor()+"²ã,"+home.getRoom()+"ÊÒ"+home.getHall()+"Ìü"+home.getToilet()+"ÎÀ"); %>
+                    ï¿½ï¿½ï¿½İ¸Å›r:<% out.println(home.getFloor()+"ï¿½ï¿½,"+home.getRoom()+"ï¿½ï¿½"+home.getHall()+"ï¿½ï¿½"+home.getToilet()+"ï¿½ï¿½"); %>
 
                 </p>
                 <hr>
                 <p>
-                    Ãæ»ı:<% out.println(home.getFloor());%>Æ½·½Ã×
+                    ï¿½ï¿½ï¿½:<% out.println(home.getFloor());%>Æ½ï¿½ï¿½ï¿½ï¿½
                 </p>
                 <hr>
                 <p>
-                    Â“ÀMÈË:<% out.println(user.getName());%>
+                    Â“ï¿½Mï¿½ï¿½:<% out.println(user.getName());%>
                 </p>
             </div>
         </div>
@@ -128,23 +209,23 @@
 </div>
 <div class="information">
         <div id="info">
-            »ù±¾ĞÅÏ¢
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
         </div>
     <div class="info-table">
         <div class="info-cell">
-            <p class="info-type">Â¥²ã</p>
+            <p class="info-type">Â¥ï¿½ï¿½</p>
             <p class="info-value"><% out.println(home.getFloor());%></p>
         </div>
         <div class="info-cell">
-            <p class="info-type">¶°ºÅ</p>
+            <p class="info-type">ï¿½ï¿½ï¿½ï¿½</p>
             <p class="info-value"><% out.println(home.getBuildNum());%></p>
         </div>
         <div class="info-cell">
-            <p class="info-type">µ¥Ôª</p>
+            <p class="info-type">ï¿½ï¿½Ôª</p>
             <p class="info-value"><% out.println(home.getUnitNum());%></p>
         </div>
         <div class="info-cell">
-            <p class="info-type">·¿¼äºÅ</p>
+            <p class="info-type">ï¿½ï¿½ï¿½ï¿½ï¿½</p>
             <p class="info-value"><% out.println(home.getRoomNum());%></p>
         </div>
 
@@ -154,7 +235,7 @@
                 <p class="name"><% out.println(user.getName());%></p>
                 <p class="phone-number">
                     <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-                    Â“ÀMëŠÔ’:<% out.println(user.getPhone());%>
+                    Â“ï¿½Mï¿½Ô’:<% out.println(user.getPhone());%>
                 </p>
             </div>
             <div class="info-description">
@@ -162,7 +243,7 @@
 
             </div>
         </div>
-        <div id="pic"><p>ˆDÆ¬</p></div>
+        <div id="pic"><p>ï¿½DÆ¬</p></div>
     <div class="pics">
         <%
             if (home.getCert1() != null )
@@ -196,7 +277,7 @@
         %>
 
     </div>
-        <div id="map-title">µØˆD</div>
+        <div id="map-title">ï¿½ØˆD</div>
         <div id="map">
         </div>
 </div>
@@ -259,6 +340,48 @@
         });
     });
 </script>
+    <script>
+    $(function(){
+    $('.loginbtn').on('click', function(){
+    $('#loginform').submit();
+    });
+    $('.signupbtn').on('click', function(){
+    $('#signupform').submit();
+    });
+    });
+    $(function(){
+    var wait = 60;
+    function time() {
+    if (wait == 0) {
+    $('.check-btn').removeAttr("disabled");
+    $('.check-btn').html("ç™¼é€é©—è­‰ç¢¼");
+    wait = 60;
+    } else {
+    $('.check-btn').attr("disabled", "disabled");
+    $('.check-btn').html("é‡æ–°ç™¼é€(" + wait + ")");
+    wait--;
+    setTimeout(function() {
+    time()
+    },
+    1000)
+    }
+    }
+    $('.check-btn').on('click', function(){
+    var username = $('input#semail').val();
+    $.ajax({
+    type: 'POST',
+    url: '/struts/yanzheng.action',
+    data: {
+    username: username
+    },
+    success: function(){
+    time();
+    }
+
+    });
+    });
+    });
+    </script>
 
 
 

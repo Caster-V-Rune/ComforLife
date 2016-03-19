@@ -70,31 +70,29 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class=""><a href="/struts/search.action?kw=&type=1&rentPay=0&salePay=0&room=0&rentType=0">找租房</a></li>
-                    <li><a href="/struts/search.action?kw=&type=0&rentPay=0&salePay=0&room=0&rentType=0">買新房</a></li>
-                    <li><a href="/struts/search.action?kw=&type=2&rentPay=0&salePay=0&room=0&rentType=0">買二手房</a></li>
-                    <li><a href="/struts/newsList.action">新聞</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav">
+    <li class=""><a href="">找租房</a></li>
+    <li><a href="">买新房</a></li>
+    <li><a href="">买二手房</a></li>
+    <li><a href="">新闻</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
 
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="personManage.html"><i class="fa fa-user fa-fw"></i> 用户账户</a>
-                            </li>
-                            <li><a href="userInfo.html"><i class="fa fa-gear fa-fw"></i> 设置</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+    <li><a href="/templates/user?user_id=<%=s.getAttribute("id") %>"><i class="fa fa-user fa-fw"></i> 用户账户</a>
+    </li>
+    <li class="divider"></li>
+    <li><a href='/struts/delSession.action'>註銷</a></li>
+
+    </ul>
+    <!-- /.dropdown-user -->
+    </li>
+    </ul>
+    </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
 
         <!-- /.navbar-header -->

@@ -1,0 +1,26 @@
+#footer {
+  text-align: center;
+  color: gray;
+  padding: 1em 0;
+  line-height: 2em;
+}
+.nowrap-parent span {
+  white-space: nowrap;
+}
+.gen-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hover-show {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+}
+.hover-show.hover {
+  opacity: 1;
+  visibility: visible;
+}

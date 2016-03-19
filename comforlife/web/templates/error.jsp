@@ -1,2 +1,2 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-${chenggong}
+<script>document.ready=function(){alert('登陸失敗')}</script>
