@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.RenthomeEntity" table="renthome" schema="" catalog="comforlife">
+        <id name="homeId">
+            <column name="homeID" sql-type="int" not-null="true"/>
+        </id>
+        <property name="userId">
+            <column name="userID" sql-type="int" not-null="true"/>
+        </property>
+        <property name="homeType">
+            <column name="homeType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="rentType">
+            <column name="rentType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="conName">
+            <column name="conName" sql-type="varchar" length="100" not-null="true"/>
+        </property>
+        <property name="homeArea">
+            <column name="homeArea" sql-type="varchar" length="100" not-null="true"/>
+        </property>
+        <property name="busiArea">
+            <column name="busiArea" sql-type="varchar" length="100" not-null="true"/>
+        </property>
+        <property name="room">
+            <column name="room" sql-type="int" not-null="true"/>
+        </property>
+        <property name="hall">
+            <column name="hall" sql-type="int" not-null="true"/>
+        </property>
+        <property name="toilet">
+            <column name="toilet" sql-type="int" not-null="true"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="int" not-null="true"/>
+        </property>
+        <property name="fitment">
+            <column name="fitment" sql-type="int" not-null="true"/>
+        </property>
+        <property name="direction">
+            <column name="direction" sql-type="int"/>
+        </property>
+        <property name="cert">
+            <column name="cert" sql-type="blob"/>
+        </property>
+        <property name="floor">
+            <column name="floor" sql-type="int"/>
+        </property>
+        <property name="floorNum">
+            <column name="floorNum" sql-type="int"/>
+        </property>
+        <property name="buildNum">
+            <column name="buildNum" sql-type="int"/>
+        </property>
+        <property name="unitNum">
+            <column name="unitNum" sql-type="int"/>
+        </property>
+        <property name="roomNum">
+            <column name="roomNum" sql-type="int"/>
+        </property>
+        <property name="rentNum">
+            <column name="rentNum" sql-type="int"/>
+        </property>
+        <property name="depositType">
+            <column name="depositType" sql-type="int"/>
+        </property>
+        <property name="support">
+            <column name="support" sql-type="int"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="100"/>
+        </property>
+        <property name="desc">
+            <column name="desc" sql-type="text" length="65535"/>
+        </property>
+        <property name="checkInTime">
+            <column name="checkInTime" sql-type="date"/>
+        </property>
+        <property name="check">
+            <column name="check" sql-type="int"/>
+        </property>
+        <property name="attention">
+            <column name="attention" sql-type="int"/>
+        </property>
+        <property name="latlng">
+            <column name="latlng" sql-type="varchar" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

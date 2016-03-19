@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="struts" extends="struts-default">
+        <action name="index" class="com.index">
+            <result name="yes">/templates/index.jsp</result>
+        </action>
+        <action name="denglu" class="com.denglu">
+            <result name="yes" type= "chain">index</result>
+        </action>
+        <action name="yanzheng" class="com.yanzheng">
+            <result name="no">/templates/index.jsp</result>
+        </action>
+        <action name="zhuce" class="com.zhuce">
+            <result name="no">/templates/index.jsp</result>
+        </action>
+        <action name="search" class="com.search">
+            <result name="yes">/templates/rentSearch.jsp</result>
+        </action>
+        <action name="addRentHouseIndex" class="com.addHouse" method="redir">
+            <result name="yes">/templates/addhouse.jsp</result>
+        </action>
+        <action name="addRentHouse" class="com.addHouse">
+            <result name="yes">/templates/index.jsp</result>
+        </action>
+    </package>
+</struts>

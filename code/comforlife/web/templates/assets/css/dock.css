@@ -1,0 +1,153 @@
+#docker {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  right: 0;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media only screen and (max-height: 640px) {
+  #docker {
+    -webkit-transform: translate3d(100%, -50%, 0);
+    -moz-transform: translate3d(100%, -50%, 0);
+    -ms-transform: translate3d(100%, -50%, 0);
+    -o-transform: translate3d(100%, -50%, 0);
+    transform: translate3d(100%, -50%, 0);
+  }
+}
+#docker #dock {
+  background-color: rgba(0, 0, 0, 0.4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px 0 0 10px;
+  padding: 4px;
+  padding-right: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#docker #dock li {
+  padding: 8px;
+}
+#docker #dock li .dock-icon {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 32px;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  cursor: default;
+}
+#docker #dock li .dock-icon:hover {
+  color: rgba(255, 255, 255, 0.2);
+}
+#docker #dock li .dock-icon-img {
+  width: 48px;
+  height: 48px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+#docker #dock li .dock-icon-img:hover {
+  opacity: 0.8;
+}
+#docker #dock li .dock-popup {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: -1;
+  color: white;
+  -webkit-transform: translate3d(100%, -50%, 0);
+  -moz-transform: translate3d(100%, -50%, 0);
+  -ms-transform: translate3d(100%, -50%, 0);
+  -o-transform: translate3d(100%, -50%, 0);
+  transform: translate3d(100%, -50%, 0);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#docker #dock li .dock-popup .dock-popup-inner {
+  width: 176px;
+  height: 176px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px 0 0 10px;
+  margin-right: 61px;
+}
+#docker #dock li .dock-popup .dock-popup-inner .key {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+#docker #dock li .dock-popup img {
+  width: 100%;
+  height: 100%;
+}
+#docker #dock li:hover .dock-popup {
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+#docker #switch {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  -o-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+#docker #switch div {
+  font-size: 30px;
+  padding: 17px;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 64px;
+}
+#docker #switch div:hover {
+  color: rgba(0, 0, 0, 0.2);
+}
+#docker.closed #dock {
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+#docker.closed #switch div {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}

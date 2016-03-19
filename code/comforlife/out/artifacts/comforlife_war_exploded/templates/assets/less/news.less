@@ -1,0 +1,106 @@
+
+@import "defines.less";
+
+body {
+	background-color: #E0E0E0;
+}
+
+.news-container {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.news-entry {
+	// to unify entry border blank
+	//	and "Keep Reading" button offset 
+	@outerblank: 1.2em;
+	
+	background-color: white;
+	margin: 2em 0;
+	position: relative;
+	
+	// float (img) clearfix
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+	
+	.news-top {
+		padding: 0 @outerblank;
+		padding-top: @outerblank;
+		
+		h3 {
+			a { color: #333; }
+			font-size: 24px;
+			padding: 0;
+			margin: 0;
+			padding-bottom: 0.1em;
+		}
+		
+		.news-date {
+			color: chocolate;
+			padding-bottom: 0.75em;
+		}
+	}
+	
+	img {
+		float: left;
+		padding: @outerblank;
+		padding-top: 0;
+		
+		// autofit image scale ratio
+		// stackoverflow.com/questions/12991351/css-force-image-resize-and-keep-aspect-ratio
+		max-width: 270px;
+		max-height: 195px;
+		width: auto;
+		height: auto;
+		
+		@media @mobile-medium {
+			max-width: 100%;
+			max-height: none;
+			width: 100%;
+			height: auto;
+			
+			float: none;
+			display: block;
+			padding: 0;
+			margin-bottom: 1em;
+		}
+	}
+	
+	.news-bottom {
+		margin: 0 @outerblank;
+		.news-summary {
+			color: dimgrey;
+		}
+		// style and layout
+		// 	* style: overwrite Bootstrap .btn
+		// 	* layout: absolute + offset
+		.news-fullbtn {
+			color: lightgray;
+			font-weight: bold;
+			background-color: dimgray;
+			border-radius: 2px;
+			
+			position: absolute;
+			right: @outerblank;
+			bottom: @outerblank;
+			
+			@media @mobile-medium {
+				position: relative;
+				right: 0;
+				bottom: 0;
+				margin-bottom: @outerblank;
+				float: right;
+			}
+		}
+	}
+}
+
+#footer {
+	text-align: center;
+	color: gray;
+	padding: 1em 0;
+	line-height: 2em;
+}
