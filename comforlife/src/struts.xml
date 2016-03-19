@@ -12,6 +12,7 @@
         </action>
         <action name="denglu" class="com.denglu">
             <result name="yes" type= "chain">index</result>
+            <result name="no" >/templates/error.jsp</result>
         </action>
         <action name="yanzheng" class="com.yanzheng">
             <result name="yes" type="chain">index</result>
