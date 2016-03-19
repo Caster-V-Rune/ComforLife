@@ -1,8 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.NewsEntity" %>
 
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"templates"+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
+<base href=" <%=basePath%>">
 <%
     List news = (List)request.getAttribute("admin0Info");
     int size = news.size();
@@ -51,32 +56,41 @@
 <div id="wrapper">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">ComforLife</a>
-        </div>
-        <!-- /.navbar-header -->
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <a class="navbar-brand" href="">ComforLife</a>
+    </div>
 
-        <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
-        </ul>
-        <!-- /.navbar-top-links -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+    <li class=""><a href="">找租房</a></li>
+    <li><a href="">买新房</a></li>
+    <li><a href="">买二手房</a></li>
+    <li><a href="">新闻</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
 
-        <div class="navbar-default sidebar" role="navigation">
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+    <li><a href="/templates/user?user_id=<%=s.getAttribute("id") %>"><i class="fa fa-user fa-fw"></i> 用户账户</a>
+    </li>
+    <li class="divider"></li>
+    <li><a href='/struts/delSession.action'>註銷</a></li>
+
+    </ul>
+    <!-- /.dropdown-user -->
+    </li>
+    </ul>
+    </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+
+    <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>

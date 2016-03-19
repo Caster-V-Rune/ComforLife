@@ -273,6 +273,7 @@ body {
   position: relative;
   overflow: auto;
   height: 100%;
+    width: 100%;
 }
 .details .detail-list .detail .detail-container .house-list .list .tlist .scroll-list .tag .dian {
   width: 6px;

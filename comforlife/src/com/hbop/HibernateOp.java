@@ -1,5 +1,6 @@
 package com.hbop;
 
+import org.hibernate.ObjectDeletedException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
@@ -48,8 +49,9 @@ public class HibernateOp {
         return result;
     }
 
-    public void update(String sql)
+
+    public org.hibernate.Session getSession()
     {
-        session.createSQLQuery(sql).executeUpdate();
+        return this.session;
     }
 }

@@ -50,7 +50,7 @@ html,body{
   position: relative;
 }
 .first-page{
-  background-image: url(~"../images/0.jpg");
+  background-image: url(~"../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -71,7 +71,10 @@ html,body{
     text-align: inherit;
     .logo{
       height: 45%;
-      background-color: #2b542c;
+      background-image: url(~"../images/logo.png");
+      -webkit-border-radius: 5px 5px 0 0;
+      -moz-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
     }
     .search-type{
       height: 25%;
@@ -158,43 +161,54 @@ html,body{
 }
 .details{
   margin-top: 50px;
-  padding-top: 40px;
+  padding: 40px 0 0 0;
+  overflow:hidden;
   background-color: #fcfcfc;
+  .detail-list{
+    float: left;
+    overflow: hidden;
+    width: 70%;
+    margin: 10px auto;
+    padding: 0;
+    height: 100%;
+    .detail {
+      height: 480px;
+      position: relative;
+      left: 10%;
+      width: 90%;
+      .detail-header {
+        width: 100%;
+        font-size: 25px;
+      }
 
-  .detail{
-    height: 480px;
-    position: relative;
-    left: 10%;
-    width: 80%;
-    .detail-header{
-      width: 100%;
-      font-size: 25px;
-    };
-    .detail-line{
-      height: 3px;
-      .line1{
-        float: left;
-        width: 29%;
+      .detail-line {
         height: 3px;
-        margin: 0 8px 0 auto;
-        padding: 0;
-        background-color: red;
-        overflow: hidden;
-      };
-      .line2{
-        float: left;
-        width: 70%;
-        height: 3px;
-        margin:  0 auto;
-        padding: 0;
-        background-color: red;
-        overflow: hidden;
-      };
-    };
-    .detail-container{
+        .line1 {
+          float: left;
+          width: 29%;
+          height: 3px;
+          margin: 0 8px 0 auto;
+          padding: 0;
+          background-color: red;
+          overflow: hidden;
+        }
+      ;
+        .line2 {
+          float: left;
+          width: 70%;
+          height: 3px;
+          margin: 0 auto;
+          padding: 0;
+          background-color: red;
+          overflow: hidden;
+        }
+      ;
+      }
+
+      .detail-container {
       position: relative;
       width: 100%;
-      .house-list{
+      .house-list {
         float: left;
         overflow: hidden;
         width: 30%;
@@ -202,24 +216,25 @@ html,body{
         padding: 0;
         position: relative;
         height: 400px;
-        .xuxian{
+        .xuxian {
           float: left;
           width: 5%;
           height: 100%;
           border-right: dotted;
           border-right-width: 2px;
           border-right-color: #c8c8c8;
-        };
-        .list{
+        }
+      ;
+        .list {
           float: left;
           width: 85%;
           height: 100%;
-          .flist{
+          .flist {
             width: 94%;
             height: 40%;
-            .tag{
+            .tag {
               height: 15px;
-              .dian{
+              .dian {
                 width: 6px;
                 height: 6px;
                 background-color: #fcfcfc;
@@ -231,8 +246,9 @@ html,body{
                 left: -4px;
                 top: 7px;
                 overflow: visible;
-              };
-              .house-list-title{
+              }
+            ;
+              .house-list-title {
                 margin-left: 4px;
                 padding-left: 5px;
                 font-size: 15px;
@@ -240,8 +256,9 @@ html,body{
                 background-color: red;
                 .border-radius(2px);
                 color: white;
-              };
-              .house-list-title-bg{
+              }
+            ;
+              .house-list-title-bg {
                 position: relative;
                 float: left;
                 width: 0;
@@ -251,14 +268,16 @@ html,body{
                 border-left: 5px solid red;
                 top: -15px;
                 left: 74px;
-              };
-            };
-            .one-house{
+              }
+            ;
+            }
+          ;
+            .one-house {
               height: 30px;
               padding: 5px;
               margin: 5px;
               position: relative;
-              .house-name{
+              .house-name {
                 color: black;
                 width: 70%;
                 text-align: left;
@@ -276,7 +295,7 @@ html,body{
           .tlist{
             position: relative;
             height: 60%;
-            .scroll-list{
+            .scroll-list {
               position: relative;
               overflow: auto;
               height: 100%;
@@ -343,25 +362,25 @@ html,body{
       .house-pictures{
         float: left;
         overflow: hidden;
-        width: 50%;
+        width: 70%;
         margin: 10px auto;
         padding: 0;
         position: relative;
         height: 400px;
-        .fpic{
+        .fpic {
           margin: 1%;
           float: left;
           padding: 0;
           width: 62%;
           height: 48%;
-          img{
+          img {
             margin: 0;
             width: 100%;
             height: 100%;
           };
           .fpic-des{
             margin: 0;
-            .bg(rgba(0, 0, 0, 0.2),black);
+            .bg(rgba(0, 0, 0, 0.2), black);
             position: relative;
             z-index: 1;
             width: 100%;
@@ -373,20 +392,20 @@ html,body{
             color: white;
           };
         }
-        .pic{
+        .pic {
           margin: 1%;
           float: left;
           padding: 0;
           width: 30%;
           height: 48%;
-          img{
+          img {
             margin: 0;
             width: 100%;
             height: 100%;
           };
           .pic-des{
             margin: 0;
-            .bg(rgba(0, 0, 0, 0.2),black);
+            .bg(rgba(0, 0, 0, 0.2), black);
             position: relative;
             z-index: 1;
             width: 100%;
@@ -397,43 +416,55 @@ html,body{
             color: white;
           };
         }
-      };
-      .house-news{
+      }
+    ;
+
+    }
+    }
+
+  }
+  .house-news{
+    float: left;
+    overflow: hidden;
+    width: 20%;
+    margin: 10px auto;
+    padding: 0;
+    height: 400px;
+    .line{
+      height: 3px;
+      margin: 0 8px 0 auto;
+      padding: 0;
+      background-color: red;
+      overflow: hidden;
+      width: 100%;
+    }
+    .news-header{
+      margin: 7px auto 8px auto;
+      height: 5%;
+      .news-header-name{
+        font-size: 15px;
         float: left;
-        overflow: hidden;
-        width: 20%;
-        margin: 10px auto;
-        padding: 0;
-        height: 400px;
-        .news-header{
-          margin: 10px auto;
-          height: 5%;
-          .news-header-name{
-            font-size: 15px;
-            float: left;
-            width: 90%;
-            margin: 0;
-          };
-          .news-header-icon{
-            float: left;
-            margin: 0;
-          };
-        };
-        .news-block{
-          .fnews{
-            text-align: center;
-            color: red;
-            font-size: large;
-          };
-          .news{
-            text-align: left;
-            color: black;
-            margin: 5px auto;
-          };
-        };
+        width: 90%;
+        margin: 0;
+      };
+      .news-header-icon{
+        float: left;
+        margin: 0;
       };
     };
-  }
+    .news-block{
+      .fnews{
+        text-align: center;
+        color: red;
+        font-size: large;
+      };
+      .news{
+        text-align: left;
+        color: black;
+        margin: 5px auto;
+      };
+    };
+  };
 }
 .footer{
   margin: auto;

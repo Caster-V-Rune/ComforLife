@@ -1,8 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.NewsEntity" %>
 
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"templates"+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
+<base href=" <%=basePath%>">
 <%
     List news = (List)request.getAttribute("admin0Info");
     int size = news.size();

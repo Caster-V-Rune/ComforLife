@@ -4,9 +4,14 @@
 <%@ page import="com.UserEntity" %>
 <%@ page import="com.NewsEntity" %>
 <%@ page import="com.RenthomeEntity" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"templates"+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
+    <base href=" <%=basePath%>">
     <%  List saleHomeId = (List)request.getAttribute("saleHomeId");
         List saleHomeInfo = (List)request.getAttribute("saleHomeInfo");
         List rentHomeId = (List)request.getAttribute("rentHomeId");
@@ -83,11 +88,13 @@
                             <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="/templates/user?user_id=<%=s.getAttribute("id") %>"><i class="fa fa-user fa-fw"></i> 用户账户</a>
+                            <li><a href="personManage.html"><i class="fa fa-user fa-fw"></i> 用户账户</a>
+                            </li>
+                            <li><a href="userInfo.html"><i class="fa fa-gear fa-fw"></i> 设置</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href='/struts/delSession.action'>註銷</a></li>
-
+                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+                            </li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
@@ -245,8 +252,30 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-6 col-md-6">
-                                <a href="#"><span class=" fa fa-search fa-align-center" style="font-size: 30px"></span>
-                                <p><strong>帮你卖房</strong></p>
+                                <a href="#" class="thumbnail">
+                                    <img src="/assets/images/1.jpg"></image>
+                                <p align="center"><strong>帮你卖房</strong></p>
+
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <a href="#" class="thumbnail">
+                                    <img src="/assets/images/1.jpg"></image>
+                                    <p align="center"><strong>帮你买房</strong></p>
+
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <a href="#" class="thumbnail">
+                                    <img src="/assets/images/1.jpg"></image>
+                                    <p align="center"><strong>帮你租房</strong></p>
+
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <a href="#" class="thumbnail">
+                                    <img src="/assets/images/1.jpg"></image>
+                                    <p align="center"><strong>帮你出租</strong></p>
 
                                 </a>
                             </div>

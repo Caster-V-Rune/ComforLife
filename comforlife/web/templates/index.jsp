@@ -61,7 +61,6 @@
     </ul>
 
         <%
-                    HttpSession s = request.getSession(false);
                     if (s.getAttribute("user") == null)
                     {
                     System.out.print("123");

@@ -1,9 +1,12 @@
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
-
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"templates"+"/";
+%>
 <head>
-
+    <base href=" <%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,30 +68,6 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-    <li class=""><a href="">找租房</a></li>
-    <li><a href="">买新房</a></li>
-    <li><a href="">买二手房</a></li>
-    <li><a href="">新闻</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-
-    <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-user">
-    <li><a href="/templates/user?user_id=<%=s.getAttribute("id") %>"><i class="fa fa-user fa-fw"></i> 用户账户</a>
-    </li>
-    <li class="divider"></li>
-    <li><a href='/struts/delSession.action'>註銷</a></li>
-
-    </ul>
-    <!-- /.dropdown-user -->
-    </li>
-    </ul>
-    </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 
 

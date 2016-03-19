@@ -74,6 +74,8 @@
     </package>
 
 
+
+
     <package name="homeinfo" extends="struts-default" namespace="/templates">
         <action name="show" class="com.homeinfo.show">
             <result name="rent">/templates/rent.jsp</result>
@@ -81,31 +83,43 @@
             <result name="failed">/index.jsp</result>
         </action>
 
-        <!--<action name="news"  class="com.news.news">-->
-            <!--<result name="failed">/failed.jsp</result>-->
-            <!--<result name="success">/templates/news.jsp</result>-->
-        <!--</action>-->
-
         <action name="user" class="com.personal.Person">
             <result name="failed">/templates/failed.jsp</result>
             <result name="success">/templates/personManage.jsp</result>
         </action>
+
+        <action name="myrent" class="com.personal.MyRent">
+            <result name="success">/templates/myRent.jsp</result>
+        </action>
+
+        <action name="mysale" class="com.personal.MySale">
+            <result name="success">/templates/mySale.jsp</result>
+        </action>
     </package>
 
-    <!--<package name="admin" extends="struts-default" namespace="/templates">-->
-        <!--<action name="admin" class="com.admin.Admin">-->
-            <!--<result name="failed">/index.jsp</result>-->
-            <!--<result name="admin0">/templates/admin-index.jsp</result>-->
-            <!--<result name="admin1">/templates/admin-index1.jsp</result>-->
-            <!--<result name="admin2">/templates/admin-index2.jsp</result>-->
-            <!--<result name="admin3">/templates/admin-index3.jsp</result>-->
-            <!--<result name="admin4">/templates/admin-index4.jsp</result>-->
-            <!--<result name="admin5">/templates/admin-index5.jsp</result>-->
-            <!--<result name="admin6">/templates/admin-index6.jsp</result>-->
-        <!--</action>-->
+    <package name="admin" extends="struts-default" namespace="/templates">
+        <action name="admin" class="com.admin.Admin">
+            <result name="failed">/index.jsp</result>
+            <result name="admin0">/templates/admin-index.jsp</result>
+            <result name="admin1">/templates/admin-index1.jsp</result>
+            <result name="admin2">/templates/admin-index2.jsp</result>
+            <result name="admin3">/templates/admin-index3.jsp</result>
+            <result name="admin4">/templates/admin-index4.jsp</result>
+            <result name="admin5">/templates/admin-index5.jsp</result>
+            <result name="admin6">/templates/admin-index6.jsp</result>
+        </action>
 
-        <!--<action name="top" class="com.admin.Top">-->
-            <!--<result name="success" type="chain">admin</result>-->
-        <!--</action>-->
-    <!--</package>-->
+        <action name="top" class="com.admin.Top">
+        </action>
+        <action name="delNews" class="com.admin.DelNews">
+        </action>
+        <action name="delHome" class="com.admin.DelHome">
+        </action>
+        <action name="delUser" class="com.admin.DelUser">
+        </action>
+        <action name="check" class="com.admin.Check">
+        </action>
+
+    </package>
+
 </struts>

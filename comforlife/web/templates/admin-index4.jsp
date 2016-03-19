@@ -2,6 +2,10 @@
 <%@ page import="com.SalehomeEntity" %>
 <%@ page import="com.RenthomeEntity" %>
 <%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"templates"+"/";
+%>
+<%
     List saleHome = (List)request.getAttribute("admin4SaleHomeInfo");
     int saleSize = saleHome.size();
     List rentHome = (List)request.getAttribute("admin4RentHomeInfo");
@@ -14,7 +18,7 @@
 <html lang="en">
 
 <head>
-
+    <base href=" <%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,34 +73,10 @@
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-    <a class="navbar-brand" href="">ComforLife</a>
+            <a class="navbar-brand" href="index.html">ComforLife</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-    <li class=""><a href="">找租房</a></li>
-    <li><a href="">买新房</a></li>
-    <li><a href="">买二手房</a></li>
-    <li><a href="">新闻</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-
-    <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-user">
-    <li><a href="/templates/user?user_id=<%=s.getAttribute("id") %>"><i class="fa fa-user fa-fw"></i> 用户账户</a>
-    </li>
-    <li class="divider"></li>
-    <li><a href='/struts/delSession.action'>註銷</a></li>
-
-    </ul>
-    <!-- /.dropdown-user -->
-    </li>
-    </ul>
-    </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 
 
@@ -107,13 +87,13 @@
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 新聞<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
-                                <a href="">查看新聞量</a>
+                                <a href="/templates/admin.action?index=0">查看新聞量</a>
                             </li>
                             <li>
-                                <a href="">已置頂新聞</a>
+                                <a href="/templates/admin.action?index=1">已置頂新聞</a>
                             </li>
                             <li>
-                                <a href="">添加新聞</a>
+                                <a href="/templates/admin.action?index=2">添加新聞</a>
                             </li>
                         </ul>
                     </li>
@@ -121,10 +101,10 @@
                         <a href="#"><i class="fa fa-edit fa-fw"></i> 房產管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
-                                <a href="">審批房產</a>
+                                <a href="/templates/admin.action?index=3">審批房產</a>
                             </li>
                             <li>
-                                <a href="">刪除房產</a>
+                                <a href="/templates/admin.action?index=4">刪除房產</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -133,7 +113,7 @@
                         <a href="#"><i class="fa fa-user fa-fw"></i> 用戶管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
-                                <a href="">刪除用戶</a>
+                                <a href="/templates/admin.action?index=5">刪除用戶</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -295,25 +275,43 @@
         });
         $('.house-yes').on('click', function(){
             var id = $($(this).parents('td').siblings('td')[0]).html();
+            var type=$($(this).parents('td').siblings('td')[2]).html();
+            if (type=='rent'){
+                type=0;
+            }else if(type=='sale'){
+                type=1;
+            }
             var d = {
-                id: id
+                id: id,
+                type: type
             };
+            $(this).parents('tr').remove();
             $.ajax({
                 method: 'POST',
-                url: '',
+                url: '/templates/check.action',
                 data: d,
-                success: function(){},
+                success: function(){
+
+                },
                 error: function(){}
             });
         });
         $('.house-no').on('click', function(){
             var id = $($(this).parents('td').siblings('td')[0]).html();
+            var type=$($(this).parents('td').siblings('td')[2]).html();
+            if (type=='rent'){
+                type=0;
+            }else if(type=='sale'){
+                type=1;
+            }
             var d = {
-                id: id
-            };
+                id: id,
+                type: type
+            }
+            $(this).parents('tr').remove();
             $.ajax({
                 method: 'POST',
-                url: '',
+                url: '/templates/check.action',
                 data: d,
                 success: function(){},
                 error: function(){}
