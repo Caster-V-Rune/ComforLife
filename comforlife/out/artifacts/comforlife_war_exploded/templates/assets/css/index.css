@@ -1,0 +1,442 @@
+.header .login {
+  position: absolute;
+  z-index: 1;
+  padding-left: 90%;
+  padding-top: 10px;
+  font-size: 13px;
+}
+.header .login a {
+  color: white;
+}
+.header .login a:hover {
+  text-decoration: none;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 1024px;
+  position: relative;
+}
+.first-page {
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+}
+.first-page .house-search {
+  height: 40%;
+  width: 60%;
+  background-color: #0f0f0f;
+  -khtml-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+  text-align: inherit;
+}
+.first-page .house-search .logo {
+    background-image: url('../images/logo.png');
+  height: 45%;
+  background-color: #2b542c;
+}
+.first-page .house-search .search-type {
+  height: 25%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  align-items: center;
+  display: -webkit-flex;
+}
+.first-page .house-search .search-type .types {
+  text-align: center;
+}
+.first-page .house-search .search-type .types a {
+  margin: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  padding: 10px;
+}
+.first-page .house-search .search-type .types a:hover {
+  background-color: firebrick;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.first-page .house-search .search-type .types a.cur {
+  background-color: firebrick;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.first-page .house-search .innerline {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.first-page .house-search .innerline .sanjiao {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  margin-left: 30px;
+  margin-bottom: -1px;
+}
+.first-page .house-search .search-input {
+  height: 17%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.first-page .house-search .search-input .form-control {
+  border: 0 solid #ccc;
+}
+.first-page .house-search .gaojisousuo a {
+  margin-left: 80%;
+}
+.arrow-down {
+  z-index: 1;
+  position: absolute;
+  top: 70%;
+  left: 5%;
+}
+.arrow-down .button-next-cont .button-next {
+  display: inline-block;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.arrow-down .button-next-cont .button-next .glyphicon-chevron-down {
+  margin-top: 18px;
+}
+.details {
+  margin-top: 50px;
+  padding-top: 40px;
+  background-color: #fcfcfc;
+}
+.details .detail {
+  height: 480px;
+  position: relative;
+  left: 10%;
+  width: 80%;
+}
+.details .detail .detail-header {
+  width: 100%;
+  font-size: 25px;
+}
+.details .detail .detail-line {
+  height: 3px;
+}
+.details .detail .detail-line .line1 {
+  float: left;
+  width: 29%;
+  height: 3px;
+  margin: 0 8px 0 auto;
+  padding: 0;
+  background-color: red;
+  overflow: hidden;
+}
+.details .detail .detail-line .line2 {
+  float: left;
+  width: 70%;
+  height: 3px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: red;
+  overflow: hidden;
+}
+.details .detail .detail-container {
+  position: relative;
+  width: 100%;
+}
+.details .detail .detail-container .house-list {
+  float: left;
+  overflow: hidden;
+  width: 30%;
+  margin: 10px auto;
+  padding: 0;
+  position: relative;
+  height: 400px;
+}
+.details .detail .detail-container .house-list .xuxian {
+  float: left;
+  width: 5%;
+  height: 100%;
+  border-right: dotted;
+  border-right-width: 2px;
+  border-right-color: #c8c8c8;
+}
+.details .detail .detail-container .house-list .list {
+  float: left;
+  width: 85%;
+  height: 100%;
+}
+.details .detail .detail-container .house-list .list .flist {
+  width: 94%;
+  height: 40%;
+}
+.details .detail .detail-container .house-list .list .flist .tag {
+  height: 15px;
+}
+.details .detail .detail-container .house-list .list .flist .tag .dian {
+  width: 6px;
+  height: 6px;
+  background-color: #fcfcfc;
+  border: 2px #c8c8c8 solid;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  float: left;
+  left: -4px;
+  top: 7px;
+  overflow: visible;
+}
+.details .detail .detail-container .house-list .list .flist .tag .house-list-title {
+  margin-left: 4px;
+  padding-left: 5px;
+  font-size: 15px;
+  width: 70px;
+  background-color: red;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: white;
+}
+.details .detail .detail-container .house-list .list .flist .tag .house-list-title-bg {
+  position: relative;
+  float: left;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid red;
+  top: -15px;
+  left: 74px;
+}
+.details .detail .detail-container .house-list .list .flist .one-house {
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+}
+.details .detail .detail-container .house-list .list .flist .one-house .house-name {
+  color: black;
+  width: 70%;
+  text-align: left;
+  float: left;
+}
+.details .detail .detail-container .house-list .list .flist .one-house .house-price {
+  color: #505050;
+  width: 30%;
+  text-align: left;
+  float: left;
+}
+.details .detail .detail-container .house-list .list .tlist {
+  position: relative;
+  height: 60%;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list .tag .dian {
+  width: 6px;
+  height: 6px;
+  background-color: #fcfcfc;
+  border: 2px #c8c8c8 solid;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  z-index: 2;
+  top: 7px;
+  float: left;
+  left: -4px;
+  overflow: visible;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list .tag .house-list-title {
+  margin-left: 4px;
+  padding-left: 5px;
+  font-size: 15px;
+  width: 70px;
+  background-color: red;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: white;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list .tag .house-list-title-bg {
+  position: relative;
+  float: left;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid red;
+  top: -15px;
+  left: 74px;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list .one-house {
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list .one-house .house-name {
+  color: black;
+  width: 70%;
+  text-align: left;
+  float: left;
+}
+.details .detail .detail-container .house-list .list .tlist .scroll-list .one-house .house-price {
+  color: #505050;
+  width: 30%;
+  text-align: left;
+  float: left;
+}
+.details .detail .detail-container .house-pictures {
+  float: left;
+  overflow: hidden;
+  width: 50%;
+  margin: 10px auto;
+  padding: 0;
+  position: relative;
+  height: 400px;
+}
+.details .detail .detail-container .house-pictures .fpic {
+  margin: 1%;
+  float: left;
+  padding: 0;
+  width: 62%;
+  height: 48%;
+}
+.details .detail .detail-container .house-pictures .fpic img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.details .detail .detail-container .house-pictures .fpic .fpic-des {
+  margin: 0;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.2)), to(black));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), black);
+  filter: progid:DXImageTranform.Microsoft.gradient(startColorstr=rgba(0, 0, 0, 0.2), endColorstr=black, gradientType=0);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  top: -40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.details .detail .detail-container .house-pictures .pic {
+  margin: 1%;
+  float: left;
+  padding: 0;
+  width: 30%;
+  height: 48%;
+}
+.details .detail .detail-container .house-pictures .pic img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.details .detail .detail-container .house-pictures .pic .pic-des {
+  margin: 0;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.2)), to(black));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), black);
+  filter: progid:DXImageTranform.Microsoft.gradient(startColorstr=rgba(0, 0, 0, 0.2), endColorstr=black, gradientType=0);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  top: -40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.details .detail .detail-container .house-news {
+  float: left;
+  overflow: hidden;
+  width: 20%;
+  margin: 10px auto;
+  padding: 0;
+  height: 400px;
+}
+.details .detail .detail-container .house-news .news-header {
+  margin: 10px auto;
+  height: 5%;
+}
+.details .detail .detail-container .house-news .news-header .news-header-name {
+  font-size: 15px;
+  float: left;
+  width: 90%;
+  margin: 0;
+}
+.details .detail .detail-container .house-news .news-header .news-header-icon {
+  float: left;
+  margin: 0;
+}
+.details .detail .detail-container .house-news .news-block .fnews {
+  text-align: center;
+  color: red;
+  font-size: large;
+}
+.details .detail .detail-container .house-news .news-block .news {
+  text-align: left;
+  color: black;
+  margin: 5px auto;
+}
+.footer {
+  margin: auto;
+  background-color: #a5a5a5;
+  color: white;
+  padding: 5px;
+}
+.footer div div div.col-md-5.col-md-offset-1.widget div p {
+  padding: 0;
+  margin: 0;
+}
+.footer div div div:nth-child(2) div p {
+  padding: 0;
+  margin: 0;
+}
+.header-h {
+  min-width: 1100px;
+  width: 100%;
+  height: 50px;
+  background-color: #0d3966;
+  position: fixed;
+  z-index: 9;
+}
+.zhanwei {
+  width: 100%;
+  height: 70px;
+  position: relative;
+  left: 0;
+  top: 0;
+}

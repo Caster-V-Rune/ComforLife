@@ -1,0 +1,91 @@
+body {
+  min-width: 1100px;
+  background-color: #f3f3f3;
+}
+.header {
+  min-width: 1100px;
+  width: 100%;
+  height: 50px;
+  background-color: #0d3966;
+  position: fixed;
+  z-index: 9;
+}
+.zhanwei {
+  width: 100%;
+  height: 70px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.footer {
+  margin: auto;
+  background-color: #a5a5a5;
+  color: white;
+  padding: 5px;
+}
+.footer div div div.col-md-5.col-md-offset-1.widget div p {
+  padding: 0;
+  margin: 0;
+}
+.footer div div div:nth-child(2) div p {
+  padding: 0;
+  margin: 0;
+}
+.house-detail-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+}
+#dragandrophandler {
+  border: 2px dotted #0B85A1;
+  width: 575px;
+  color: #92AAB0;
+  text-align: left;
+  vertical-align: middle;
+  padding: 30px 100px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 200%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#img-list {
+  width: 100%;
+  margin-top: 0;
+}
+.img-box {
+  width: 100%;
+  margin: auto;
+  padding-left: 100px;
+}
+#dragandrophandlers {
+  border: 2px dotted #0B85A1;
+  width: 575px;
+  color: #92AAB0;
+  text-align: left;
+  vertical-align: middle;
+  padding: 30px 100px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 200%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#img-lists {
+  width: 100%;
+  margin-top: 0;
+}
+.img-box {
+  width: 100%;
+  margin: auto;
+  padding-left: 100px;
+}
