@@ -1,2 +1,10 @@
 ﻿.idea/*
 lib/*
+*.xml
+web/templates/.idea/.name
+*.iml
+*.name
+document/temp/策划阶段/宜居网站平台系统_项目进度计划.mpp
+*.mpp
+document/temp/策划阶段/宜居网站平台系统_项目进度计划.mpp
+*.mpp
