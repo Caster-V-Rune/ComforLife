@@ -44,9 +44,6 @@
         <property name="direction">
             <column name="direction" sql-type="int"/>
         </property>
-        <property name="cert">
-            <column name="cert" sql-type="blob"/>
-        </property>
         <property name="floor">
             <column name="floor" sql-type="int"/>
         </property>
@@ -80,14 +77,23 @@
         <property name="checkInTime">
             <column name="checkInTime" sql-type="date"/>
         </property>
-        <property name="check">
-            <column name="check" sql-type="int"/>
+        <property name="checkIn">
+            <column name="checkIn" sql-type="int"/>
         </property>
         <property name="attention">
             <column name="attention" sql-type="int"/>
         </property>
         <property name="latlng">
             <column name="latlng" sql-type="varchar" length="100"/>
+        </property>
+        <property name="cert1">
+            <column name="cert1" sql-type="text" length="65535"/>
+        </property>
+        <property name="cert2">
+            <column name="cert2" sql-type="text" length="65535"/>
+        </property>
+        <property name="cert3">
+            <column name="cert3" sql-type="text" length="65535"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,111 @@
+.shop-container {
+  max-width: 1080px;
+  width: 80%;
+  margin: 0 auto;
+}
+.simg-container {
+  position: relative;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+}
+@media only screen and (max-width: 539px) {
+  .simg-container {
+    padding-right: 0;
+  }
+}
+.simg-container .simg-hero {
+  width: 400px;
+  height: 400px;
+}
+@media only screen and (max-width: 539px) {
+  .simg-container .simg-hero {
+    width: 100%;
+    height: auto;
+  }
+}
+.simg-container .simg-hero-overlay {
+  width: 4em;
+  height: 4em;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.simg-container ul.simg-list {
+  cursor: default;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 400px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 539px) {
+  .simg-container ul.simg-list {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.simg-container ul.simg-list li {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px transparent solid;
+}
+.simg-container ul.simg-list li img {
+  width: 3.2em;
+  height: 3.2em;
+}
+.simg-container ul.simg-list li.hover {
+  box-shadow: 0 0 3px orangered;
+  border: 2px lightyellow solid;
+}
+.simg-container .simg-preview-zoom {
+  position: absolute;
+  top: 0;
+  left: 400px;
+  width: 18em;
+  height: 18em;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6em rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+@media only screen and (max-width: 539px) {
+  .simg-container .simg-preview-zoom {
+    display: none;
+  }
+}
+.simg-container .simg-hover-show {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+}
+.simg-container .simg-hover-show.hover {
+  opacity: 1;
+  visibility: visible;
+}
+.simg-container {
+  float: left;
+}
+@media only screen and (max-width: 539px) {
+  .simg-container {
+    float: none;
+  }
+}
+.shop-first-row:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.shop-first-row .shop-right-container {
+  padding: 0.5em;
+}
+.shop-first-row .shop-right-container .shop-description {
+  text-indent: 1.5em;
+}

@@ -1,9 +1,12 @@
 package com;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.sql.Date;
+import java.util.Map;
+
 /**
  * Created by leyang on 2016/3/16.
  */
@@ -68,6 +71,12 @@ public class userInfo extends ActionSupport {
     }
     public String delUser() throws Exception {
         hibernateOperation.delUser(new Integer(user_id));
+        ActionContext actionContext = ActionContext.getContext();
+
+        Map session = actionContext.getSession();
+
+        session.remove("user");
+        session.remove("id");
         return "yes";
     }
 }

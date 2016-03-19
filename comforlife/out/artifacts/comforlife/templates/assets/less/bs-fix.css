@@ -1,0 +1,7 @@
+.dropdown-menu {
+  min-width: unset;
+  text-align: center;
+}
+.dropdown-menu .dropdown-item:hover {
+  color: black;
+}

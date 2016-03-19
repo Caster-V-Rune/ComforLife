@@ -18,7 +18,8 @@ public class denglu extends ActionSupport {
     public String execute()
     {
         try {
-            List users = hibernateOperation.denglu(username);
+           List users = hibernateOperation.denglu(username);
+            //List users = null;
             if (users == null) {
                 return "no";
             } else {
@@ -32,6 +33,7 @@ public class denglu extends ActionSupport {
 
                     session.put("user", email);
                     session.put("id", user.getId());
+
                     return "yes";
                 } else {
                     return "no";

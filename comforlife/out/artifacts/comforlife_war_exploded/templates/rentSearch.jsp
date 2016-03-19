@@ -333,12 +333,14 @@
                 }
             });
             var GET = $.urlGet();
+            args = GET;
             $('.tags-name').each(function(i,e){
                 var value = GET[$(this).attr('v')];
                 $(e).siblings('.tag').removeClass('active');
                 $(e).siblings('.tag').each(function(i,e){
                     if ($(e).attr('v')==value){
                         $(e).addClass('active');
+
                     }
                 })
             });

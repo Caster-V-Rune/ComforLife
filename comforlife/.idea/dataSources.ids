@@ -13,7 +13,7 @@
       <column name="author" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="summary" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="descri" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="click" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="top" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <primary-key name="PRIMARY" columns="ID"/>
@@ -38,7 +38,6 @@
       <column name="area" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="fitment" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="direction" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="cert" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
       <column name="floor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="floorNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="buildNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -50,9 +49,12 @@
       <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="descri" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="checkInTime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="check" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="checkIn" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
       <column name="attention" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
       <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cert1" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="cert2" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="cert3" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="homeID"/>
     </table>
     <table name="rentpic" schema="" catalog="comforlife" type="TABLE">
@@ -88,11 +90,15 @@
       <column name="support" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="descri" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="check" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="checkIn" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
       <column name="attention" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
       <column name="latlng" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="FS" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cert3" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="cert2" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="cert1" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="checkInTime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="homeType" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="homeID"/>
     </table>
     <table name="salepic" schema="" catalog="comforlife" type="TABLE">

@@ -172,7 +172,7 @@
                             <c:forEach var="home" items="${salerecommandList}" varStatus="status">
 
                                 <div class="one-house">
-                                    <div class="house-name"><a href="/struts/saleHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                    <div class="house-name"><a href="/templates/homeinfo/show.action?home_id=${home.homeId}&isrent=0">${home.title}</a></div>
                                     <div class="house-price">${home.unitPrice}元/平方米</div>
                                 </div>
                             </c:forEach>
@@ -187,7 +187,7 @@
                                 </div>
                                 <c:forEach var="home" items="${saleaccordTimeList}" varStatus="status">
                                     <div class="one-house">
-                                        <div class="house-name"><a href="/struts/saleHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                        <div class="house-name"><a href="/templates/homeinfo/show.action?home_id=${home.homeId}&isrent=0">${home.title}</a></div>
                                         <div class="house-price">${home.unitPrice}元/平方米</div>
                                     </div>
                                 </c:forEach>
@@ -261,7 +261,7 @@
                             <c:forEach var="home" items="${rentrecommandList}" varStatus="status">
 
                                 <div class="one-house">
-                                    <div class="house-name"><a href="/struts/rentHome.action?homeId=${home.homeId}">${home.title}</a></div>
+                                    <div class="house-name"><a href="/templates/homeinfo/show.action?home_id=${home.homeId}&isrent=1">${home.title}</a></div>
                                     <div class="house-price">${home.rentNum}元/月</div>
                                 </div>
                             </c:forEach>

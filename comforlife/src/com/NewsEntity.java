@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2016/3/17.
+ * Created by Administrator on 2016/3/18.
  */
 @Entity
 @Table(name = "news", schema = "", catalog = "comforlife")
@@ -69,7 +69,7 @@ public class NewsEntity {
     }
 
     @Basic
-    @Column(name = "time", nullable = true, insertable = true, updatable = true)
+    @Column(name = "time", nullable = false, insertable = true, updatable = true)
     public Timestamp getTime() {
         return time;
     }

@@ -169,7 +169,7 @@ public class hibernateOperation {
     {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-        String hql = "from SalehomeEntity as home where home.check=1";
+        String hql = "from SalehomeEntity as home where home.checkIn=1";
         if (salePay != 0)
         {
             hql= hql+"and home.unitPrice > "+500*(salePay-1)+"and home.unitPrice < "+500*salePay;
@@ -197,7 +197,7 @@ public class hibernateOperation {
     {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-        String hql = "from "+table+" as home  where home.check=1 order by home.attention desc";
+        String hql = "from "+table+" as home  where home.checkIn=1 order by home.attention desc";
         Query query = session.createQuery(hql);
         query.setMaxResults(3);
         List list = query.list();
@@ -209,7 +209,7 @@ public class hibernateOperation {
     {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-        String hql = "from "+table+" as home  where home.check=1 order by home.checkInTime desc";
+        String hql = "from "+table+" as home  where home.checkIn=1 order by home.checkInTime desc";
         Query query = session.createQuery(hql);
         query.setMaxResults(num);
         List list = query.list();
@@ -236,9 +236,27 @@ public class hibernateOperation {
     public static void insertRentHouse(RenthomeEntity renthomeEntity)
     {
         try {
+            //String sql = "insert into comforlife.renthome (homeID, userID, homeType, rentType, conName, homeArea, busiArea, room, hall, toilet, area, fitment, direction, floor, floorNum, buildNum, unitNum, roomNum, rentNum, depositType, support, title, descri, checkInTime, attention, latlng, cert1, cert2, cert3)";
             Session session = getSession();
             Transaction transaction = session.beginTransaction();
+            //session.createSQLQuery(sql);
             session.save(renthomeEntity);
+            transaction.commit();
+            session.close();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void insertSaleHouse(SalehomeEntity salehomeEntity)
+    {
+        try {
+            Session session = getSession();
+            Transaction transaction = session.beginTransaction();
+            session.save(salehomeEntity);
             transaction.commit();
             session.close();
         }catch (Exception e)

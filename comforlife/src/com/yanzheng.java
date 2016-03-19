@@ -14,7 +14,8 @@ public class yanzheng extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        List list= hibernateOperation.denglu(username);
+        //List list= hibernateOperation.denglu(username);
+       List list = null;
         if (list == null)
         {
             Random ne=new Random();

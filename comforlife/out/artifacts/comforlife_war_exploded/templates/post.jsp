@@ -42,11 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         System.out.print("123");
                 %>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">登錄</a></li>
-                    <li><a href="">註冊</a></li>
-                </ul>
-
+                <div class="login"><a data-toggle="modal" data-target="#login">登陆</a> | <a data-toggle="modal" data-target="#signup">注册</a></div>
                 <%
                 }
                 else
@@ -57,7 +53,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <%
                     }
                 %>
-
 
 
 

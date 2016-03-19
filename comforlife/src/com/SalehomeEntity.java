@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.sql.Date;
 
 /**
- * Created by Administrator on 2016/3/17.
+ * Created by Administrator on 2016/3/18.
  */
 @Entity
 @javax.persistence.Table(name = "salehome", schema = "", catalog = "comforlife")
@@ -251,16 +251,16 @@ public class SalehomeEntity {
         this.descri = descri;
     }
 
-    private Integer check;
+    private Integer checkIn;
 
     @Basic
-    @javax.persistence.Column(name = "check", nullable = true, insertable = true, updatable = true)
-    public Integer getCheck() {
-        return check;
+    @javax.persistence.Column(name = "checkIn", nullable = true, insertable = true, updatable = true)
+    public Integer getCheckIn() {
+        return checkIn;
     }
 
-    public void setCheck(Integer check) {
-        this.check = check;
+    public void setCheckIn(Integer checkIn) {
+        this.checkIn = checkIn;
     }
 
     private Integer attention;
@@ -299,6 +299,42 @@ public class SalehomeEntity {
         this.fs = fs;
     }
 
+    private String cert3;
+
+    @Basic
+    @javax.persistence.Column(name = "cert3", nullable = true, insertable = true, updatable = true, length = 65535)
+    public String getCert3() {
+        return cert3;
+    }
+
+    public void setCert3(String cert3) {
+        this.cert3 = cert3;
+    }
+
+    private String cert2;
+
+    @Basic
+    @javax.persistence.Column(name = "cert2", nullable = true, insertable = true, updatable = true, length = 65535)
+    public String getCert2() {
+        return cert2;
+    }
+
+    public void setCert2(String cert2) {
+        this.cert2 = cert2;
+    }
+
+    private String cert1;
+
+    @Basic
+    @javax.persistence.Column(name = "cert1", nullable = true, insertable = true, updatable = true, length = 65535)
+    public String getCert1() {
+        return cert1;
+    }
+
+    public void setCert1(String cert1) {
+        this.cert1 = cert1;
+    }
+
     private Date checkInTime;
 
     @Basic
@@ -309,6 +345,18 @@ public class SalehomeEntity {
 
     public void setCheckInTime(Date checkInTime) {
         this.checkInTime = checkInTime;
+    }
+
+    private Integer homeType;
+
+    @Basic
+    @javax.persistence.Column(name = "homeType", nullable = true, insertable = true, updatable = true)
+    public Integer getHomeType() {
+        return homeType;
+    }
+
+    public void setHomeType(Integer homeType) {
+        this.homeType = homeType;
     }
 
     @Override
@@ -323,7 +371,10 @@ public class SalehomeEntity {
         if (attention != null ? !attention.equals(that.attention) : that.attention != null) return false;
         if (buildNum != null ? !buildNum.equals(that.buildNum) : that.buildNum != null) return false;
         if (busiArea != null ? !busiArea.equals(that.busiArea) : that.busiArea != null) return false;
-        if (check != null ? !check.equals(that.check) : that.check != null) return false;
+        if (cert1 != null ? !cert1.equals(that.cert1) : that.cert1 != null) return false;
+        if (cert2 != null ? !cert2.equals(that.cert2) : that.cert2 != null) return false;
+        if (cert3 != null ? !cert3.equals(that.cert3) : that.cert3 != null) return false;
+        if (checkIn != null ? !checkIn.equals(that.checkIn) : that.checkIn != null) return false;
         if (checkInTime != null ? !checkInTime.equals(that.checkInTime) : that.checkInTime != null) return false;
         if (conName != null ? !conName.equals(that.conName) : that.conName != null) return false;
         if (descri != null ? !descri.equals(that.descri) : that.descri != null) return false;
@@ -333,6 +384,7 @@ public class SalehomeEntity {
         if (fs != null ? !fs.equals(that.fs) : that.fs != null) return false;
         if (hall != null ? !hall.equals(that.hall) : that.hall != null) return false;
         if (homeArea != null ? !homeArea.equals(that.homeArea) : that.homeArea != null) return false;
+        if (homeType != null ? !homeType.equals(that.homeType) : that.homeType != null) return false;
         if (latlng != null ? !latlng.equals(that.latlng) : that.latlng != null) return false;
         if (room != null ? !room.equals(that.room) : that.room != null) return false;
         if (roomNum != null ? !roomNum.equals(that.roomNum) : that.roomNum != null) return false;
@@ -369,11 +421,15 @@ public class SalehomeEntity {
         result = 31 * result + (support != null ? support.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (descri != null ? descri.hashCode() : 0);
-        result = 31 * result + (check != null ? check.hashCode() : 0);
+        result = 31 * result + (checkIn != null ? checkIn.hashCode() : 0);
         result = 31 * result + (attention != null ? attention.hashCode() : 0);
         result = 31 * result + (latlng != null ? latlng.hashCode() : 0);
         result = 31 * result + (fs != null ? fs.hashCode() : 0);
+        result = 31 * result + (cert3 != null ? cert3.hashCode() : 0);
+        result = 31 * result + (cert2 != null ? cert2.hashCode() : 0);
+        result = 31 * result + (cert1 != null ? cert1.hashCode() : 0);
         result = 31 * result + (checkInTime != null ? checkInTime.hashCode() : 0);
+        result = 31 * result + (homeType != null ? homeType.hashCode() : 0);
         return result;
     }
 }

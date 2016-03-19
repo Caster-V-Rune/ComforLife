@@ -75,7 +75,7 @@
         <c:forEach var="news" items="${newsList}" varStatus="status">
             <div class="news-entry">
                 <div class="news-top">
-                    <h3><a href="/struts/news?id=${news.id}">${news.title}</a></h3>
+                    <h3><a href="/struts/news?ID=${news.id}">${news.title}</a></h3>
                     <div class="news-date">${news.time}</div>
                 </div>
                 <div class="news-bottom">

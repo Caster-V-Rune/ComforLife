@@ -21,7 +21,7 @@
             <column name="descri" sql-type="text" length="65535"/>
         </property>
         <property name="time">
-            <column name="time" sql-type="datetime"/>
+            <column name="time" sql-type="datetime" not-null="true"/>
         </property>
         <property name="click">
             <column name="click" sql-type="int" not-null="true"/>

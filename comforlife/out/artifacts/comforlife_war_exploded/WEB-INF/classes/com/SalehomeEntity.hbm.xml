@@ -65,8 +65,8 @@
         <property name="descri">
             <column name="descri" sql-type="varchar" length="100"/>
         </property>
-        <property name="check">
-            <column name="check" sql-type="int"/>
+        <property name="checkIn">
+            <column name="checkIn" sql-type="int"/>
         </property>
         <property name="attention">
             <column name="attention" sql-type="int"/>
@@ -77,8 +77,20 @@
         <property name="fs">
             <column name="FS" sql-type="int"/>
         </property>
+        <property name="cert3">
+            <column name="cert3" sql-type="text" length="65535"/>
+        </property>
+        <property name="cert2">
+            <column name="cert2" sql-type="text" length="65535"/>
+        </property>
+        <property name="cert1">
+            <column name="cert1" sql-type="text" length="65535"/>
+        </property>
         <property name="checkInTime">
             <column name="checkInTime" sql-type="date"/>
+        </property>
+        <property name="homeType">
+            <column name="homeType" sql-type="int"/>
         </property>
     </class>
 </hibernate-mapping>

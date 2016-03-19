@@ -1,5 +1,6 @@
 
 #dropzone { margin-bottom: 3rem; }
+#dropzones { margin-bottom: 3rem; }
 
 .dropzone { border: 2px dashed #0087F7; border-radius: 5px; background: white; }
 .dropzone .dz-message { font-weight: 400; }

@@ -21,6 +21,7 @@ public class SendMailDemo {
         // 邮件内容
         StringBuffer buffer = new StringBuffer();
         buffer.append(yanzhengma);
+
         mailInfo.setContent(buffer.toString());
 
         // 发送邮件

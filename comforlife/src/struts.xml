@@ -14,10 +14,10 @@
             <result name="yes" type= "chain">index</result>
         </action>
         <action name="yanzheng" class="com.yanzheng">
-            <result name="no">/templates/index.jsp</result>
+            <result name="yes" type="chain">index</result>
         </action>
         <action name="zhuce" class="com.zhuce">
-            <result name="no">/templates/index.jsp</result>
+            <result name="yes" type="chain">index</result>
         </action>
         <action name="search" class="com.search">
             <result name="yes">/templates/rentSearch.jsp</result>
@@ -55,5 +55,56 @@
         <action name="news" class="com.news">
             <result name="yes">/templates/post.jsp</result>
         </action>
+        <action name="addHouseIndex" class="com.addRentHouse" method="redir">
+            <result name="yes">/templates/addhouse.jsp</result>
+        </action>
+        <action name="addRentHouse" class="com.addRentHouse">
+            <result name="yes" type="chain">index</result>
+        </action>
+        <action name="addSaleHouse" class="com.addBuyHouse">
+            <result name="yes" type="chain">index</result>
+        </action>
+        <action name="imagesLoad" class="com.imagesLoad">
+            <result name="yes" >/templates/path.jsp</result>
+        </action>
+        <action name="delSession" class="com.delSession">
+            <result name="yes" type="chain">index</result>
+        </action>
     </package>
+
+
+    <package name="homeinfo" extends="struts-default" namespace="/templates">
+        <action name="show" class="com.homeinfo.show">
+            <result name="rent">/templates/rent.jsp</result>
+            <result name="sale">/templates/sale.jsp</result>
+            <result name="failed">/index.jsp</result>
+        </action>
+
+        <!--<action name="news"  class="com.news.news">-->
+            <!--<result name="failed">/failed.jsp</result>-->
+            <!--<result name="success">/templates/news.jsp</result>-->
+        <!--</action>-->
+
+        <action name="user" class="com.personal.Person">
+            <result name="failed">/templates/failed.jsp</result>
+            <result name="success">/templates/personManage.jsp</result>
+        </action>
+    </package>
+
+    <!--<package name="admin" extends="struts-default" namespace="/templates">-->
+        <!--<action name="admin" class="com.admin.Admin">-->
+            <!--<result name="failed">/index.jsp</result>-->
+            <!--<result name="admin0">/templates/admin-index.jsp</result>-->
+            <!--<result name="admin1">/templates/admin-index1.jsp</result>-->
+            <!--<result name="admin2">/templates/admin-index2.jsp</result>-->
+            <!--<result name="admin3">/templates/admin-index3.jsp</result>-->
+            <!--<result name="admin4">/templates/admin-index4.jsp</result>-->
+            <!--<result name="admin5">/templates/admin-index5.jsp</result>-->
+            <!--<result name="admin6">/templates/admin-index6.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="top" class="com.admin.Top">-->
+            <!--<result name="success" type="chain">admin</result>-->
+        <!--</action>-->
+    <!--</package>-->
 </struts>
